@@ -50,9 +50,6 @@ const NewProfileForm: React.FC<NewProfileFormProps> = ({
     }
   };
 
-  const isFormValid = formData.site && formData.joinedDate && 
-                     formData.completeName && formData.workEmail;
-
   return (
     <div className="profile-form-container">
       <div className="profile-form-header">
@@ -148,9 +145,8 @@ const NewProfileForm: React.FC<NewProfileFormProps> = ({
           Discard
         </button>
         <button 
-          className={`btn-create ${isFormValid ? 'enabled' : 'disabled'}`}
+          className="btn-create enabled"
           onClick={handleSubmit}
-          disabled={!isFormValid}
         >
           Create
         </button>
