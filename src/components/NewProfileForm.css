@@ -2,8 +2,8 @@
 .profile-form-container {
   background: white;
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  width: 520px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Ant Design standard shadow */
+  width: 520px; /* Standard Ant Design form width */
   max-width: 95vw;
   margin: 20px auto;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,7 +11,7 @@
 
 /* Form Header */
 .profile-form-header {
-  padding: 24px 32px 20px 32px;
+  padding: 16px 24px;
   border-bottom: 1px solid #f0f0f0;
 }
 
@@ -26,7 +26,7 @@
 
 /* Form Content */
 .profile-form-content {
-  padding: 24px 32px;
+  padding: 24px;
 }
 
 /* Form Field */
@@ -166,10 +166,10 @@ select.form-select {
 
 /* Form Actions */
 .profile-form-actions {
-  padding: 20px 32px 24px 32px;
+  padding: 10px 16px;
   display: flex;
   justify-content: flex-end;
-  gap: 12px;
+  gap: 8px;
   border-top: 1px solid #f0f0f0;
 }
 
