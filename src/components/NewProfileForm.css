@@ -116,11 +116,32 @@
 /* Dropdown background */
 .form-select option {
   padding: 8px 12px;
+  background-color: white;
 }
 
 /* Custom dropdown styling */
 select.form-select {
   background-color: #f0f0f0;
+  width: 100%;
+}
+
+/* Dropdown list styling - Ant Design standard */
+select.form-select option {
+  background-color: white;
+}
+
+/* Dropdown menu styling */
+select.form-select:focus option {
+  background-color: white;
+}
+
+select.form-select option:checked {
+  background-color: #e6f4ff;
+  color: #1890ff;
+}
+
+select.form-select option:hover {
+  background-color: #e6f4ff;
 }
 
 /* Select Arrow */

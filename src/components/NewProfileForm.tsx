@@ -64,7 +64,10 @@ const NewProfileForm: React.FC<NewProfileFormProps> = ({
             className="form-select"
             value={formData.site}
             onChange={(e) => handleInputChange('site', e.target.value)}
-            style={{backgroundColor: formData.site ? '#e6f4ff' : '#f0f0f0'}}
+            style={{
+              backgroundColor: formData.site ? '#e6f4ff' : '#f0f0f0',
+              width: '100%'
+            }}
           >
             <option value="">Select Site</option>
             <option value="hanoi">Hanoi Office</option>
