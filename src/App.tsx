@@ -3,10 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import DiscardConfirmation from './components/DiscardConfirmation'
+import NewProfileForm from './components/NewProfileForm'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(false)
+  const [showForm, setShowForm] = useState(true)
 
   return (
     <>
@@ -20,12 +22,23 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       
+      {showForm && (
+        <NewProfileForm 
+          onDiscard={() => setShowModal(true)}
+          onCreate={(data) => {
+            console.log('Profile created:', data);
+            setShowForm(false);
+          }}
+        />
+      )}
+      
       {showModal && (
         <DiscardConfirmation 
           onCancel={() => setShowModal(false)}
           onConfirm={() => {
             console.log('Confirmed - Discarding...')
             setShowModal(false)
+            setShowForm(false)
           }}
         />
       )}
@@ -36,6 +49,9 @@ function App() {
         </button>
         <button onClick={() => setShowModal(true)} style={{marginLeft: '10px'}}>
           Show Modal
+        </button>
+        <button onClick={() => setShowForm(true)} style={{marginLeft: '10px'}}>
+          Show Form
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR

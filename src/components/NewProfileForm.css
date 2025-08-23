@@ -1,0 +1,238 @@
+/* Profile Form Container */
+.profile-form-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 520px;
+  max-width: 95vw;
+  margin: 20px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form Header */
+.profile-form-header {
+  padding: 24px 32px 20px 32px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.profile-form-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #262626;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* Form Content */
+.profile-form-content {
+  padding: 24px 32px;
+}
+
+/* Form Field */
+.form-field {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-field:last-child {
+  margin-bottom: 0;
+}
+
+/* Form Label */
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #262626;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* Form Input */
+.form-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #262626;
+  background-color: white;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #4096ff;
+  box-shadow: 0 0 0 2px rgba(64, 150, 255, 0.1);
+}
+
+.form-input::placeholder {
+  color: #bfbfbf;
+}
+
+/* Auto Generated Field */
+.form-input.auto-gen {
+  background-color: #fafafa;
+  color: #8c8c8c;
+  cursor: not-allowed;
+}
+
+/* Select Field */
+.form-select {
+  width: 100%;
+  padding: 8px 32px 8px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #262626;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  appearance: none;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #4096ff;
+  box-shadow: 0 0 0 2px rgba(64, 150, 255, 0.1);
+}
+
+.form-select option[value=""] {
+  color: #bfbfbf;
+}
+
+/* Selected option in dropdown */
+.form-select option:checked,
+.form-select option:hover {
+  background-color: #e6f4ff;
+}
+
+/* Dropdown background */
+.form-select option {
+  padding: 8px 12px;
+}
+
+/* Custom dropdown styling */
+select.form-select {
+  background-color: #f0f0f0;
+}
+
+/* Select Arrow */
+.select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  margin-top: 13px;
+}
+
+/* Date Input */
+.date-input-wrapper {
+  position: relative;
+}
+
+.date-input {
+  padding-right: 40px;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.date-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Form Helper */
+.form-helper {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #8c8c8c;
+  line-height: 1.4;
+}
+
+/* Form Actions */
+.profile-form-actions {
+  padding: 20px 32px 24px 32px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Buttons */
+.btn-discard,
+.btn-create {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  border: 1px solid;
+  transition: all 0.3s ease;
+  min-width: 80px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+}
+
+/* Discard Button */
+.btn-discard {
+  background-color: white;
+  border-color: #d9d9d9;
+  color: #262626;
+}
+
+.btn-discard:hover {
+  border-color: #4096ff;
+  color: #4096ff;
+}
+
+/* Create Button */
+.btn-create.enabled {
+  background-color: #1677ff;
+  border-color: #1677ff;
+  color: white;
+}
+
+.btn-create.enabled:hover {
+  background-color: #4096ff;
+  border-color: #4096ff;
+}
+
+.btn-create.disabled {
+  background-color: #f5f5f5;
+  border-color: #d9d9d9;
+  color: #bfbfbf;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .profile-form-container {
+    width: 100%;
+    margin: 10px;
+    border-radius: 0;
+  }
+  
+  .profile-form-header,
+  .profile-form-content,
+  .profile-form-actions {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
