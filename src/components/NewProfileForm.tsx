@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Select } from 'antd';
 import './NewProfileForm.css';
-import './custom-select.css';
 
 interface NewProfileFormProps {
   onDiscard?: () => void;
@@ -61,26 +61,28 @@ const NewProfileForm: React.FC<NewProfileFormProps> = ({
         {/* Site Field */}
         <div className="form-field">
           <label className="form-label">Site</label>
-          <select 
+          <Select
             className="form-select"
             value={formData.site}
-            onChange={(e) => handleInputChange('site', e.target.value)}
+            onChange={(value) => handleInputChange('site', value)}
+            placeholder="Select Site"
             style={{
               backgroundColor: formData.site ? '#e6f4ff' : '#f0f0f0',
               width: '100%'
             }}
-          >
-            <option value="" style={{backgroundColor: '#e6f7ff', color: '#262626'}}>Select Site</option>
-            <option value="hanoi" style={{backgroundColor: '#e6f7ff', color: '#262626'}}>Hanoi Office</option>
-            <option value="hcmc" style={{backgroundColor: '#e6f7ff', color: '#262626'}}>Ho Chi Minh Office</option>
-            <option value="danang" style={{backgroundColor: '#e6f7ff', color: '#262626'}}>Da Nang Office</option>
-            <option value="remote" style={{backgroundColor: '#e6f7ff', color: '#262626'}}>Remote</option>
-          </select>
-          <div className="select-arrow">
-            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-              <path d="M1 1.5L6 6.5L11 1.5" stroke="#999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
+            options={[
+              { value: 'hanoi', label: 'Hanoi Office' },
+              { value: 'hcmc', label: 'Ho Chi Minh Office' },
+              { value: 'danang', label: 'Da Nang Office' },
+              { value: 'remote', label: 'Remote' }
+            ]}
+            dropdownStyle={{
+              backgroundColor: '#e6f7ff',
+              border: '1px solid #d9d9d9',
+              borderRadius: '6px'
+            }}
+            dropdownClassName="ant-select-dropdown-custom"
+          />
         </div>
 
         {/* Joined Date Field */}
