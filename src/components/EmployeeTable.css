@@ -7,10 +7,14 @@
   background: #fff;
   font-weight: 600;
   color: #262626;
+  padding-top: 10px;   /* ~42px header height with line-height 22 */
+  padding-bottom: 10px;
 }
 
 .employee-table :where(.ant-table-tbody > tr > td) {
   color: #595959;
+  padding-top: 10px;   /* ~42px row height with line-height 22 */
+  padding-bottom: 10px;
 }
 
 .employee-table :where(.ant-table-container) {
