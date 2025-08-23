@@ -84,6 +84,21 @@
 /* Select Field - Ant Design */
 .form-select {
   width: 100%;
+  text-align: left;
+}
+
+/* Ant Design Select text alignment */
+.form-select .ant-select-selector {
+  text-align: left !important;
+}
+
+.form-select .ant-select-selection-placeholder {
+  text-align: left !important;
+  color: #bfbfbf !important;
+}
+
+.form-select .ant-select-selection-item {
+  text-align: left !important;
 }
 
 /* Custom dropdown styling for Ant Design Select */

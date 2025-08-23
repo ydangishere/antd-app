@@ -63,12 +63,13 @@ const NewProfileForm: React.FC<NewProfileFormProps> = ({
           <label className="form-label">Site</label>
           <Select
             className="form-select"
-            value={formData.site}
+            value={formData.site || undefined}
             onChange={(value) => handleInputChange('site', value)}
             placeholder="Select Site"
             style={{
               backgroundColor: formData.site ? '#e6f4ff' : '#f0f0f0',
-              width: '100%'
+              width: '100%',
+              textAlign: 'left'
             }}
             options={[
               { value: 'hanoi', label: 'Hanoi Office' },
