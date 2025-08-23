@@ -116,7 +116,8 @@
 /* Dropdown background */
 .form-select option {
   padding: 8px 12px;
-  background-color: white;
+  background-color: #f0f9ff !important; /* Light blue background */
+  color: #262626 !important;
 }
 
 /* Custom dropdown styling */
@@ -127,21 +128,23 @@ select.form-select {
 
 /* Dropdown list styling - Ant Design standard */
 select.form-select option {
-  background-color: white;
+  background-color: #f0f9ff !important; /* Light blue background for all options */
+  color: #262626 !important;
 }
 
 /* Dropdown menu styling */
 select.form-select:focus option {
-  background-color: white;
+  background-color: #f0f9ff !important;
 }
 
 select.form-select option:checked {
-  background-color: #e6f4ff;
-  color: #1890ff;
+  background-color: #e6f4ff !important; /* Darker blue for selected */
+  color: #1890ff !important;
 }
 
 select.form-select option:hover {
-  background-color: #e6f4ff;
+  background-color: #e6f4ff !important; /* Darker blue for hover */
+  color: #1890ff !important;
 }
 
 /* Select Arrow */

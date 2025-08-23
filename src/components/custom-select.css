@@ -1,0 +1,30 @@
+/* Override browser default dropdown styling */
+select.form-select option {
+  background-color: #e6f7ff !important;
+  color: #262626 !important;
+}
+
+/* Style for dropdown list */
+select.form-select {
+  appearance: none;
+}
+
+/* Force light blue background in all browsers */
+@-moz-document url-prefix() {
+  select.form-select option {
+    background-color: #e6f7ff !important;
+  }
+  
+  select.form-select option:checked {
+    box-shadow: 0 0 0 30px #e6f7ff inset;
+  }
+}
+
+/* Webkit browsers */
+select.form-select option:hover {
+  background-color: #bae7ff !important;
+}
+
+select.form-select option:checked {
+  background-color: #bae7ff !important;
+}

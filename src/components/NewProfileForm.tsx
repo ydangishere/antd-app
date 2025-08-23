@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './NewProfileForm.css';
+import './custom-select.css';
 
 interface NewProfileFormProps {
   onDiscard?: () => void;
@@ -69,11 +70,11 @@ const NewProfileForm: React.FC<NewProfileFormProps> = ({
               width: '100%'
             }}
           >
-            <option value="">Select Site</option>
-            <option value="hanoi">Hanoi Office</option>
-            <option value="hcmc">Ho Chi Minh Office</option>
-            <option value="danang">Da Nang Office</option>
-            <option value="remote">Remote</option>
+            <option value="" style={{backgroundColor: '#e6f7ff', color: '#262626'}}>Select Site</option>
+            <option value="hanoi" style={{backgroundColor: '#e6f7ff', color: '#262626'}}>Hanoi Office</option>
+            <option value="hcmc" style={{backgroundColor: '#e6f7ff', color: '#262626'}}>Ho Chi Minh Office</option>
+            <option value="danang" style={{backgroundColor: '#e6f7ff', color: '#262626'}}>Da Nang Office</option>
+            <option value="remote" style={{backgroundColor: '#e6f7ff', color: '#262626'}}>Remote</option>
           </select>
           <div className="select-arrow">
             <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
