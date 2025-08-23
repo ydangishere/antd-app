@@ -161,6 +161,7 @@ select.form-select {
   font-size: 12px;
   color: #8c8c8c;
   line-height: 1.4;
+  text-align: left;
 }
 
 /* Form Actions */
