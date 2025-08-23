@@ -4,11 +4,13 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import DiscardConfirmation from './components/DiscardConfirmation'
 import NewProfileForm from './components/NewProfileForm'
+import EmployeeTable from './components/EmployeeTable'
 
 function App() {
   const [count, setCount] = useState(0)
   const [showModal, setShowModal] = useState(false)
   const [showForm, setShowForm] = useState(true)
+  const [showTable, setShowTable] = useState(false)
 
   return (
     <>
@@ -24,22 +26,20 @@ function App() {
       
       {showForm && (
         <NewProfileForm 
-          onDiscard={() => setShowModal(true)}
+          onDiscard={() => setShowForm(false)}
           onCreate={(data) => {
             console.log('Profile created:', data);
             setShowForm(false);
           }}
         />
       )}
+
+      {showTable && <EmployeeTable />}
       
       {showModal && (
         <DiscardConfirmation 
           onCancel={() => setShowModal(false)}
-          onConfirm={() => {
-            console.log('Confirmed - Discarding...')
-            setShowModal(false)
-            setShowForm(false)
-          }}
+          onConfirm={() => setShowModal(false)}
         />
       )}
       
@@ -48,10 +48,13 @@ function App() {
           count is {count}
         </button>
         <button onClick={() => setShowModal(true)} style={{marginLeft: '10px'}}>
-          Show Modal
+          Preview Discard Modal
         </button>
         <button onClick={() => setShowForm(true)} style={{marginLeft: '10px'}}>
           Show Form
+        </button>
+        <button onClick={() => setShowTable((v) => !v)} style={{marginLeft: '10px'}}>
+          {showTable ? 'Hide Employee Table' : 'Preview Employee Table'}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
