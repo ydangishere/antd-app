@@ -1,6 +1,7 @@
 import React from 'react';
 import { Input } from 'antd';
 import type { SearchProps } from 'antd/es/input/Search';
+import { SearchOutlined } from '@ant-design/icons';
 import './SearchBoxAntD.css';
 
 const { Search } = Input;
@@ -27,8 +28,8 @@ const SearchBoxAntD: React.FC<SearchBoxAntDProps> = ({
         placeholder={placeholder}
         onSearch={handleSearch}
         style={{ width }}
-        enterButton
-        allowClear
+        enterButton={<SearchOutlined />}
+        allowClear={false}
         {...props}
       />
     </div>
