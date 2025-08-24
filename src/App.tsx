@@ -5,6 +5,8 @@ import './App.css'
 import DiscardConfirmation from './components/DiscardConfirmation'
 import NewProfileForm from './components/NewProfileForm'
 import EmployeeTable from './components/EmployeeTable'
+import SearchBox from './components/SearchBox'
+import SearchBoxAntD from './components/SearchBoxAntD'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +25,20 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      
+      <div style={{ maxWidth: '500px', margin: '20px auto', padding: '0 20px' }}>
+        <h3>Custom SearchBox Component</h3>
+        <SearchBox 
+          onSearch={(value) => console.log('Custom SearchBox:', value)}
+          onChange={(value) => console.log('Input changed:', value)}
+        />
+        
+        <h3 style={{ marginTop: '30px' }}>Ant Design SearchBox Component</h3>
+        <SearchBoxAntD 
+          onSearch={(value) => console.log('Ant Design SearchBox:', value)}
+          placeholder="Search by Name, ID or Email"
+        />
+      </div>
       
       {showForm && (
         <NewProfileForm 
