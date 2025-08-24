@@ -1,0 +1,54 @@
+/* Ant Design SearchBox Custom Styling */
+
+.search-box-antd-container {
+  width: 100%;
+}
+
+/* Custom styling to match your design */
+.search-box-antd-container .ant-input-search {
+  height: 32px;
+}
+
+.search-box-antd-container .ant-input {
+  height: 32px;
+  background-color: #eaf0f9;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px 0 0 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #090909;
+}
+
+.search-box-antd-container .ant-input:focus,
+.search-box-antd-container .ant-input:hover {
+  border-color: #d9d9d9;
+  box-shadow: none;
+}
+
+.search-box-antd-container .ant-input::placeholder {
+  color: #666;
+  opacity: 0.7;
+}
+
+.search-box-antd-container .ant-input-group-addon {
+  border-radius: 0 6px 6px 0;
+  border: 1px solid #d9d9d9;
+  border-left: none;
+}
+
+.search-box-antd-container .ant-btn {
+  height: 32px;
+  border-radius: 0 6px 6px 0;
+  background-color: #f5f5f5;
+  border: none;
+  color: #666;
+}
+
+.search-box-antd-container .ant-btn:hover {
+  background-color: #e8e8e8;
+  color: #333;
+}
+
+.search-box-antd-container .ant-btn:active {
+  background-color: #ddd;
+}
