@@ -329,3 +329,60 @@
   color: var(--color-gray-200);
   font-family: var(--font-segoe-ui);
 }
+
+/* Dropdown styles */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid var(--color-gainsboro-100);
+  border-radius: var(--br-6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 4px;
+}
+
+.dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(75, 158, 253, 0.1);
+}
+
+.dropdown-item.selected {
+  background-color: rgba(75, 158, 253, 0.1);
+  font-weight: 500;
+}
+
+.checkmark {
+  color: var(--color-cornflowerblue);
+  font-weight: bold;
+}
+
+/* Make the component container relative for proper dropdown positioning */
+.container-parent, .container-group, .container-parent2 {
+  position: relative;
+}
+
+/* Fix container overflow issues */
+.container2, .container5, .container17 {
+  position: relative;
+  overflow: visible;
+}
+
+/* Ensure the form has proper height */
+.form {
+  height: auto;
+  min-height: 611px;
+  overflow: visible;
+}
