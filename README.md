@@ -1,89 +1,30 @@
-# Antd App - React Components Library
+# Ant Design Component Library
 
-A modern React TypeScript application with reusable UI components, built with Vite and Ant Design.
+A showcase of React TypeScript components built with Ant Design.
 
-## 🚀 Features
+## Components
 
-- ⚛️ **React 18** with TypeScript
-- ⚡ **Vite** for fast development
-- 🎨 **Ant Design** integration
-- 📱 **Responsive** components
-- 🧩 **Reusable** component library
-- 🔧 **ESLint** configured
+- SearchBoxNew: Modern search input with custom styling
+- FilterComponent: Advanced filtering with multiple selection options
+- EmployeeTable: Data table for employee information
+- NewProfileForm: Form for creating new profiles
+- DiscardConfirmation: Confirmation modal for discard actions
 
-## 🏗️ Project Structure
+## Development
 
-```
-antd-app/
-├── src/
-│   ├── components/          # Reusable UI components
-│   │   ├── DiscardConfirmation.tsx
-│   │   ├── DiscardConfirmation.css
-│   │   └── README.md
-│   ├── App.tsx             # Main application
-│   └── main.tsx           # Entry point
-├── public/
-└── package.json
-```
-
-## 🎯 Available Components
-
-### DiscardConfirmation Modal
-Professional confirmation dialog for discard actions.
-
-**Direct Links:**
-- [Component Code](./src/components/DiscardConfirmation.tsx)
-- [Styling](./src/components/DiscardConfirmation.css)
-- [Documentation](./src/components/README.md)
-
-## 🛠️ Quick Start
-
-### Installation
 ```bash
-git clone https://github.com/ydangishere/antd-app.git
-cd antd-app
+# Install dependencies
 npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
 ```
 
-### Development
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run preview      # Preview production build
-```
+## Deployment
 
-### Using Components
-```tsx
-import DiscardConfirmation from './components/DiscardConfirmation';
+This project is deployed to GitHub Pages using GitHub Actions.
 
-function MyApp() {
-  const [showModal, setShowModal] = useState(false);
-  
-  return (
-    <div>
-      {showModal && (
-        <DiscardConfirmation 
-          onCancel={() => setShowModal(false)}
-          onConfirm={() => setShowModal(false)}
-        />
-      )}
-    </div>
-  );
-}
-```
-
-## 📦 Tech Stack
-
-- **Framework:** React 18 + TypeScript
-- **Build Tool:** Vite
-- **UI Library:** Ant Design
-- **Styling:** CSS Modules
-- **Linting:** ESLint
-
-## 🌐 Live Demo
-
-Run `npm run dev` and visit `http://localhost:5173`
-
-## 📄 License
-
-MIT License
+Visit: [https://ydangishere.github.io/antd-app/](https://ydangishere.github.io/antd-app/)
