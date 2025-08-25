@@ -342,7 +342,7 @@
   border: 1px solid var(--color-gainsboro-100);
   border-radius: var(--br-6);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 10;
+  z-index: 1000;
   max-height: 200px;
   overflow-y: auto;
   margin-top: 4px;
@@ -380,6 +380,7 @@
 .container2, .container5, .container17 {
   position: relative;
   overflow: visible;
+  z-index: 100;
 }
 
 /* Ensure the form has proper height */

@@ -141,7 +141,7 @@ const FilterComponent: React.FC<FilterComponentProps> = ({ onFilter, onCancel })
                   
                   {/* Dropdown menu */}
                   {openDropdown === option.value && (
-                    <div className="dropdown-menu">
+                    <div className="dropdown-menu" onClick={e => e.stopPropagation()}>
                       {getDropdownItems(option.value).map(item => {
                         const isSelected = filters[option.value]?.includes(item.value);
                         return (
