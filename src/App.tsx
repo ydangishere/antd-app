@@ -136,20 +136,19 @@ function App() {
       {/* Header */}
       <div style={{ 
         background: 'white', 
-        padding: '20px', 
+        padding: '10px', 
         borderBottom: '1px solid #e0e0e0',
-        marginBottom: '30px'
+        marginBottom: '0'
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
           <div>
             <a href="https://vite.dev" target="_blank">
-              <img src={viteLogo} className="logo" alt="Vite logo" />
+              <img src={viteLogo} className="logo" alt="Vite logo" style={{ width: '24px', height: '24px' }} />
             </a>
             <a href="https://react.dev" target="_blank">
-              <img src={reactLogo} className="logo react" alt="React logo" />
+              <img src={reactLogo} className="logo react" alt="React logo" style={{ width: '24px', height: '24px' }} />
             </a>
           </div>
-          <h1>Component Library</h1>
         </div>
       </div>
 
@@ -159,7 +158,7 @@ function App() {
         {/* Component List */}
         {!activeComponent && (
           <div>
-            <h2 style={{ marginBottom: '30px', color: '#333' }}>Available Components</h2>
+            <h2 style={{ marginTop: '10px', marginBottom: '20px', color: '#333' }}>Available Components</h2>
             <div style={{ 
               display: 'grid', 
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
