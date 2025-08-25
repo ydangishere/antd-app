@@ -179,6 +179,31 @@ function App() {
               Show Form
             </button>
           </div>
+          <div style={{ marginTop: '20px', color: '#666', fontSize: '14px' }}>
+            <div>
+              <strong>Direct component links:</strong>
+            </div>
+            <div style={{ marginTop: '10px' }}>
+              <button 
+                onClick={() => setActiveComponent('filter')}
+                style={{ marginRight: '15px', color: '#007bff', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, fontSize: '14px', cursor: 'pointer' }}
+              >
+                Filter Component
+              </button>
+              <button 
+                onClick={() => setActiveComponent('searchbox')}
+                style={{ marginRight: '15px', color: '#007bff', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, fontSize: '14px', cursor: 'pointer' }}
+              >
+                SearchBox Component
+              </button>
+              <button 
+                onClick={() => setActiveComponent('table')}
+                style={{ color: '#007bff', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, fontSize: '14px', cursor: 'pointer' }}
+              >
+                Employee Table
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
