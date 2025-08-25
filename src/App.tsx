@@ -38,7 +38,7 @@ function App() {
       name: 'Filter Component',
       description: 'Advanced filter dialog with multiple selection options',
       component: (
-        <div style={{ width: '500px', height: '800px', overflow: 'auto', margin: '0 auto' }}>
+        <div style={{ width: '500px', height: '753px', overflow: 'hidden', margin: '0 auto' }}>
           <FilterComponent 
             onFilter={(filters) => console.log('Filters applied:', filters)}
             onCancel={() => console.log('Filter canceled')}
