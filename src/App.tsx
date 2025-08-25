@@ -9,7 +9,7 @@ import SearchBoxNew from './components/SearchBoxNew'
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
-  const [showForm, setShowForm] = useState(false)
+  const [showForm, setShowForm] = useState(false) // Đã đặt là false rồi
 
   const components = [
     {
@@ -119,6 +119,37 @@ function App() {
           <p style={{ color: '#666', fontSize: '16px' }}>
             Showcase of all React TypeScript components
           </p>
+          <div style={{ marginTop: '20px' }}>
+            <button
+              onClick={() => setShowForm(true)}
+              style={{
+                background: '#007bff',
+                color: 'white',
+                border: 'none',
+                padding: '10px 20px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '14px',
+                marginRight: '10px'
+              }}
+            >
+              Show Form
+            </button>
+            <button
+              onClick={() => setActiveComponent('searchbox')}
+              style={{
+                background: '#28a745',
+                color: 'white',
+                border: 'none',
+                padding: '10px 20px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '14px'
+              }}
+            >
+              View SearchBox
+            </button>
+          </div>
         </div>
       </div>
 
