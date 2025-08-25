@@ -150,55 +150,6 @@ function App() {
             </a>
           </div>
           <h1>Component Library</h1>
-          <div style={{ marginTop: '20px' }}>
-            <div style={{ marginBottom: '10px', fontSize: '16px' }}>
-              <strong>Direct component links:</strong>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-              <button
-                onClick={() => navigateTo('filter')}
-                style={{
-                  background: '#28a745',
-                  color: 'white',
-                  border: 'none',
-                  padding: '10px 20px',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                  fontSize: '14px'
-                }}
-              >
-                View Filter Component
-              </button>
-              <button
-                onClick={() => navigateTo('searchbox')}
-                style={{
-                  background: '#6c757d',
-                  color: 'white',
-                  border: 'none',
-                  padding: '10px 20px',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                  fontSize: '14px'
-                }}
-              >
-                View SearchBox
-              </button>
-              <button
-                onClick={() => navigateTo('table')}
-                style={{
-                  background: '#007bff',
-                  color: 'white',
-                  border: 'none',
-                  padding: '10px 20px',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                  fontSize: '14px'
-                }}
-              >
-                View Employee Table
-              </button>
-            </div>
-          </div>
         </div>
       </div>
 
