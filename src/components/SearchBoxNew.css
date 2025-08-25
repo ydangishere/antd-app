@@ -17,9 +17,20 @@
   outline: none;
   background: transparent;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.88);
+  color: rgba(0, 0, 0, 0.88) !important;
   font-family: var(--font-roboto);
   width: 100%;
+  font-weight: 500;
+}
+
+/* Ensure input text color when typing */
+.input-field:focus {
+  color: rgba(0, 0, 0, 0.88) !important;
+}
+
+.input-field:not(:placeholder-shown) {
+  color: rgba(0, 0, 0, 0.88) !important;
+  font-weight: 500;
 }
 
 .input-field::placeholder {

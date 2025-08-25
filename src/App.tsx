@@ -11,6 +11,7 @@ import FilterComponent from './components/FilterComponent'
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
   const [showForm, setShowForm] = useState(false) // Đã đặt là false rồi
+  const [showDiscardModal, setShowDiscardModal] = useState(false)
 
   // Simple hash router to support deep links like #/filter
   useEffect(() => {
@@ -64,25 +65,14 @@ function App() {
       name: 'New Profile Form',
       description: 'Form component for creating new user profiles',
       component: (
-        <div style={{ width: '100%', maxWidth: '600px' }}>
-          <button
-            onClick={() => alert('This would show the actual form in a real application')}
-            style={{
-              background: '#007bff',
-              color: 'white',
-              border: 'none',
-              padding: '10px 20px',
-              borderRadius: '4px',
-              cursor: 'pointer',
-              fontSize: '14px'
+        <div style={{ width: '100%', maxWidth: '600px', margin: '0 auto' }}>
+          <NewProfileForm 
+            onDiscard={() => console.log('Form discarded')}
+            onCreate={(data) => {
+              console.log('Profile created:', data);
+              alert('Profile created successfully!');
             }}
-          >
-            Open New Profile Form
-          </button>
-          <div style={{ marginTop: '20px', color: '#666', fontSize: '14px' }}>
-            Note: The actual form is not shown here to avoid UI conflicts.
-            In a real application, clicking this button would open the form.
-          </div>
+          />
         </div>
       )
     },
@@ -97,9 +87,9 @@ function App() {
       name: 'Discard Confirmation Modal',
       description: 'Modal dialog for confirming discard actions',
       component: (
-        <div style={{ width: '100%', maxWidth: '600px' }}>
+        <div style={{ width: '100%', maxWidth: '600px', margin: '0 auto' }}>
           <button
-            onClick={() => alert('This would show the actual modal in a real application')}
+            onClick={() => setShowDiscardModal(true)}
             style={{
               background: '#007bff',
               color: 'white',
@@ -113,9 +103,22 @@ function App() {
             Show Discard Confirmation Modal
           </button>
           <div style={{ marginTop: '20px', color: '#666', fontSize: '14px' }}>
-            Note: The actual modal is not shown here to avoid UI conflicts.
-            In a real application, clicking this button would open the modal.
+            Click the button above to see the actual discard confirmation modal.
           </div>
+          
+          {showDiscardModal && (
+            <DiscardConfirmation 
+              onCancel={() => {
+                console.log('Discard cancelled');
+                setShowDiscardModal(false);
+              }}
+              onConfirm={() => {
+                console.log('Discard confirmed');
+                setShowDiscardModal(false);
+                alert('Action discarded successfully!');
+              }}
+            />
+          )}
         </div>
       )
     }
@@ -140,7 +143,7 @@ function App() {
         borderBottom: '1px solid #e0e0e0',
         marginBottom: '0'
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+        <div style={{ maxWidth: '1440px', margin: '0 auto', textAlign: 'center' }}>
           <div>
             <a href="https://vite.dev" target="_blank">
               <img src={viteLogo} className="logo" alt="Vite logo" style={{ width: '24px', height: '24px' }} />
@@ -153,7 +156,7 @@ function App() {
       </div>
 
       {/* Main Content */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+      <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 40px' }}>
         
         {/* Component List */}
         {!activeComponent && (
@@ -161,8 +164,10 @@ function App() {
             <h2 style={{ marginTop: '10px', marginBottom: '20px', color: '#333' }}>Available Components</h2>
             <div style={{ 
               display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-              gap: '20px' 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
+              gap: '30px',
+              maxWidth: '1400px',
+              margin: '0 auto'
             }}>
               {components.map((comp) => (
                 <div 

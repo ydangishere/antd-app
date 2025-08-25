@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Modal, Select, Input, Button, Row, Col, Space } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 import './FilterComponent.css';
-import downArrowIcon from '../assets/down-arrow.svg';
 
 interface FilterOption {
   label: string;
@@ -14,27 +15,28 @@ interface DropdownItem {
 }
 
 interface FilterComponentProps {
+  visible?: boolean;
   onFilter?: (filters: Record<string, string[]>) => void;
   onCancel?: () => void;
 }
 
-const FilterComponent: React.FC<FilterComponentProps> = ({ onFilter, onCancel }) => {
+const FilterComponent: React.FC<FilterComponentProps> = ({ visible = true, onFilter, onCancel }) => {
   const [filters, setFilters] = useState<Record<string, string[]>>({});
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [isModalVisible, setIsModalVisible] = useState(visible);
 
   const filterOptions: FilterOption[] = [
-    { label: 'Select Employee Type', value: 'employeeType', isMultiSelect: true },
-    { label: 'Select Employment Status', value: 'employmentStatus', isMultiSelect: true },
-    { label: 'Select Designation', value: 'designation', isMultiSelect: true },
-    { label: 'Select Division', value: 'division', isMultiSelect: true },
-    { label: 'Select Department', value: 'department', isMultiSelect: true },
-    { label: 'Select Sub Department', value: 'subDepartment', isMultiSelect: true },
-    { label: 'Select Vertical', value: 'vertical', isMultiSelect: true },
-    { label: 'Select Project', value: 'project', isMultiSelect: true },
-    { label: 'Select Sites', value: 'sites', isMultiSelect: true },
-    { label: 'Select Offices', value: 'offices', isMultiSelect: true },
-    { label: 'Select Contract Types', value: 'contractTypes', isMultiSelect: true },
-    { label: 'Select Gender', value: 'gender', isMultiSelect: false },
+    { label: 'Employee Type', value: 'employeeType', isMultiSelect: true },
+    { label: 'Employment Status', value: 'employmentStatus', isMultiSelect: true },
+    { label: 'Designation', value: 'designation', isMultiSelect: true },
+    { label: 'Division', value: 'division', isMultiSelect: true },
+    { label: 'Department', value: 'department', isMultiSelect: true },
+    { label: 'Sub Department', value: 'subDepartment', isMultiSelect: true },
+    { label: 'Vertical', value: 'vertical', isMultiSelect: true },
+    { label: 'Project', value: 'project', isMultiSelect: true },
+    { label: 'Sites', value: 'sites', isMultiSelect: true },
+    { label: 'Offices', value: 'offices', isMultiSelect: true },
+    { label: 'Contract Types', value: 'contractTypes', isMultiSelect: true },
+    { label: 'Gender', value: 'gender', isMultiSelect: false },
   ];
 
   // Sample dropdown items for each filter option
@@ -44,6 +46,7 @@ const FilterComponent: React.FC<FilterComponentProps> = ({ onFilter, onCancel })
       { label: 'Option 2', value: 'option2' },
       { label: 'Option 3', value: 'option3' },
       { label: 'Option 4', value: 'option4' },
+      { label: 'Option 5', value: 'option5' },
     ];
     
     if (optionValue === 'gender') {
@@ -57,31 +60,19 @@ const FilterComponent: React.FC<FilterComponentProps> = ({ onFilter, onCancel })
     return commonItems;
   };
   
-  const toggleDropdown = (optionValue: string) => {
-    setOpenDropdown(openDropdown === optionValue ? null : optionValue);
-  };
-  
-  const handleItemSelect = (optionValue: string, itemValue: string) => {
-    const currentValues = filters[optionValue] || [];
+  const handleSelectChange = (optionValue: string, selectedValues: string | string[]) => {
     const option = filterOptions.find(opt => opt.value === optionValue);
     
     if (option?.isMultiSelect) {
-      // Toggle selection for multi-select
-      const newValues = currentValues.includes(itemValue)
-        ? currentValues.filter(v => v !== itemValue)
-        : [...currentValues, itemValue];
-      
       setFilters(prev => ({
         ...prev,
-        [optionValue]: newValues
+        [optionValue]: Array.isArray(selectedValues) ? selectedValues : [selectedValues]
       }));
     } else {
-      // Single select
       setFilters(prev => ({
         ...prev,
-        [optionValue]: [itemValue]
+        [optionValue]: typeof selectedValues === 'string' ? [selectedValues] : selectedValues
       }));
-      setOpenDropdown(null); // Close dropdown after selection for single select
     }
   };
 
@@ -89,96 +80,104 @@ const FilterComponent: React.FC<FilterComponentProps> = ({ onFilter, onCancel })
     if (onFilter) {
       onFilter(filters);
     }
+    setIsModalVisible(false);
   };
 
   const handleCancel = () => {
+    setFilters({});
+    setIsModalVisible(false);
     if (onCancel) {
       onCancel();
     }
   };
 
+  const handleModalClose = () => {
+    setIsModalVisible(false);
+    if (onCancel) {
+      onCancel();
+    }
+  };
+
+  // Update modal visibility when visible prop changes
+  useEffect(() => {
+    setIsModalVisible(visible);
+  }, [visible]);
+
   return (
-    <div className="dialog">
-      <div className="horizontalborder">
-        <div className="filter">Filter</div>
-      </div>
-      <div className="container">
-        <div className="form">
-          <div className="group-parent">
-            {filterOptions.map((option, index) => (
-              <div 
-                key={option.value} 
-                className={index % 2 === 0 ? "container-parent" : index % 3 === 0 ? "container-parent2" : "container-group"}
-              >
-                <div className={index % 2 === 0 ? "container1" : "container4"}></div>
-                <div 
-                  className={index % 2 === 0 ? "container2" : index % 3 === 0 ? "container17" : "container5"}
-                  onClick={() => toggleDropdown(option.value)}
-                  style={{ cursor: 'pointer' }}
-                >
-                  <div className={index % 2 === 0 ? "backgroundborder" : index % 3 === 0 ? "backgroundborder5" : "backgroundborder1"}>
-                    <div className="container3">
-                      <div className="select-employee-type-container">
-                        <span>{option.label}</span>
-                        {option.isMultiSelect && <span className="multi-select"> [Multi Select]</span>}
-                        {filters[option.value]?.length > 0 && (
-                          <span style={{ color: '#4B9EFD', marginLeft: '8px' }}>
-                            ({filters[option.value].length} selected)
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                  <img 
-                    className={index % 2 === 0 ? "img-down-svg" : index % 3 === 0 ? "img-down-svg5" : "img-down-svg1"} 
-                    alt="" 
-                    src={downArrowIcon} 
-                    style={{
-                      transform: openDropdown === option.value ? 'rotate(180deg)' : 'rotate(0)',
-                      transition: 'transform 0.3s'
-                    }}
-                  />
-                  
-                  {/* Dropdown menu */}
-                  {openDropdown === option.value && (
-                    <div className="dropdown-menu" onClick={e => e.stopPropagation()}>
-                      {getDropdownItems(option.value).map(item => {
-                        const isSelected = filters[option.value]?.includes(item.value);
-                        return (
-                          <div 
-                            key={item.value}
-                            className={`dropdown-item ${isSelected ? 'selected' : ''}`}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleItemSelect(option.value, item.value);
-                            }}
-                          >
-                            {item.label}
-                            {isSelected && (
-                              <span className="checkmark">✓</span>
-                            )}
-                          </div>
-                        );
-                      })}
-                    </div>
+    <Modal
+      title="Filter"
+      open={isModalVisible}
+      onCancel={handleModalClose}
+      footer={null}
+      width={700}
+      centered
+      className="filter-modal"
+    >
+      <div style={{ padding: '20px 0' }}>
+        <Row gutter={[20, 16]}>
+          {filterOptions.map((option) => (
+            <Col span={12} key={option.value}>
+              <div style={{ marginBottom: '8px' }}>
+                <label style={{ 
+                  fontSize: '14px', 
+                  fontWeight: '500',
+                  color: '#333',
+                  marginBottom: '4px',
+                  display: 'block'
+                }}>
+                  {option.label}
+                  {option.isMultiSelect && (
+                    <span style={{ 
+                      color: '#999', 
+                      fontSize: '12px', 
+                      fontWeight: 'normal' 
+                    }}> (Multi Select)</span>
                   )}
-                </div>
+                </label>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="horizontalborder1">
-          <div style={{ position: 'relative', height: '50px' }}>
-            <div className="cancel-wrapper" onClick={handleCancel}>
-              <div className="cancel">Cancel</div>
-            </div>
-            <div className="filter-wrapper" onClick={handleFilter}>
-              <div className="cancel">Filter</div>
-            </div>
-          </div>
+              <Select
+                mode={option.isMultiSelect ? 'multiple' : undefined}
+                placeholder={`Select ${option.label}`}
+                style={{ width: '100%' }}
+                value={filters[option.value]}
+                onChange={(value) => handleSelectChange(option.value, value)}
+                allowClear
+                showSearch={option.isMultiSelect}
+                filterOption={(input, option) =>
+                  (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+                }
+                options={getDropdownItems(option.value).map(item => ({
+                  label: item.label,
+                  value: item.value
+                }))}
+                maxTagCount="responsive"
+              />
+            </Col>
+          ))}
+        </Row>
+        
+        <div style={{ 
+          marginTop: '30px', 
+          paddingTop: '20px', 
+          borderTop: '1px solid #f0f0f0',
+          textAlign: 'right'
+        }}>
+          <Space>
+            <Button onClick={handleCancel} size="large">
+              Cancel
+            </Button>
+            <Button 
+              type="primary" 
+              onClick={handleFilter}
+              size="large"
+              icon={<SearchOutlined />}
+            >
+              Filter
+            </Button>
+          </Space>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 };
 
