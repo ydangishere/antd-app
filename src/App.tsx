@@ -150,77 +150,52 @@ function App() {
             </a>
           </div>
           <h1>Component Library</h1>
-          <p style={{ color: '#666', fontSize: '16px' }}>
-            Showcase of all React TypeScript components
-          </p>
           <div style={{ marginTop: '20px' }}>
-            <button
-              onClick={() => navigateTo('filter')}
-              style={{
-                background: '#28a745',
-                color: 'white',
-                border: 'none',
-                padding: '10px 20px',
-                borderRadius: '4px',
-                cursor: 'pointer',
-                fontSize: '14px',
-                marginRight: '10px'
-              }}
-            >
-              View Filter Component
-        </button>
-            <button
-              onClick={() => navigateTo('searchbox')}
-              style={{
-                background: '#6c757d',
-                color: 'white',
-                border: 'none',
-                padding: '10px 20px',
-                borderRadius: '4px',
-                cursor: 'pointer',
-                fontSize: '14px',
-                marginRight: '10px'
-              }}
-            >
-              View SearchBox
-        </button>
-            <button
-              onClick={() => setShowForm(true)}
-              style={{
-                background: '#007bff',
-                color: 'white',
-                border: 'none',
-                padding: '10px 20px',
-                borderRadius: '4px',
-                cursor: 'pointer',
-                fontSize: '14px'
-              }}
-            >
-          Show Form
-        </button>
-          </div>
-          <div style={{ marginTop: '20px', color: '#666', fontSize: '14px' }}>
-            <div>
+            <div style={{ marginBottom: '10px', fontSize: '16px' }}>
               <strong>Direct component links:</strong>
             </div>
-            <div style={{ marginTop: '10px' }}>
-              <button 
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+              <button
                 onClick={() => navigateTo('filter')}
-                style={{ marginRight: '15px', color: '#007bff', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, fontSize: '14px', cursor: 'pointer' }}
+                style={{
+                  background: '#28a745',
+                  color: 'white',
+                  border: 'none',
+                  padding: '10px 20px',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  fontSize: '14px'
+                }}
               >
-                Filter Component
+                View Filter Component
               </button>
-              <button 
+              <button
                 onClick={() => navigateTo('searchbox')}
-                style={{ marginRight: '15px', color: '#007bff', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, fontSize: '14px', cursor: 'pointer' }}
+                style={{
+                  background: '#6c757d',
+                  color: 'white',
+                  border: 'none',
+                  padding: '10px 20px',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  fontSize: '14px'
+                }}
               >
-                SearchBox Component
+                View SearchBox
               </button>
-              <button 
+              <button
                 onClick={() => navigateTo('table')}
-                style={{ color: '#007bff', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, fontSize: '14px', cursor: 'pointer' }}
+                style={{
+                  background: '#007bff',
+                  color: 'white',
+                  border: 'none',
+                  padding: '10px 20px',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  fontSize: '14px'
+                }}
               >
-                Employee Table
+                View Employee Table
               </button>
             </div>
           </div>
