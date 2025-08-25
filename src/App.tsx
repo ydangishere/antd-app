@@ -5,7 +5,7 @@ import './App.css'
 import DiscardConfirmation from './components/DiscardConfirmation'
 import NewProfileForm from './components/NewProfileForm'
 import EmployeeTable from './components/EmployeeTable'
-import SearchBoxAntD from './components/SearchBoxAntD'
+import SearchBoxNew from './components/SearchBoxNew'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,8 +29,9 @@ function App() {
       {showSearchBox && (
         <div style={{ maxWidth: '500px', margin: '20px auto', padding: '0 20px' }}>
           <h3>Search Box</h3>
-          <SearchBoxAntD 
+          <SearchBoxNew 
             onSearch={(value) => console.log('Search:', value)}
+            onChange={(value) => console.log('Input changed:', value)}
             placeholder="Search by Name, ID or Email"
             style={{ width: '100%' }}
           />

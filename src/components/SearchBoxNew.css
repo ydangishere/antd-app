@@ -1,0 +1,101 @@
+/* CSS Variables */
+:root {
+  /* Color */
+  --color-white: #fff;
+  --color-gainsboro: #d9d9d9;
+  --color-cornflowerblue: rgba(75, 158, 253, 0.68);
+  --color-gray: #020202;
+  
+  /* Font */
+  --font-roboto: Roboto;
+}
+
+.input-field {
+  position: relative;
+  line-height: 22px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: var(--color-gray);
+  font-family: var(--font-roboto);
+  width: 100%;
+}
+
+.input-field::placeholder {
+  color: var(--color-gray);
+  opacity: 1;
+}
+
+.text {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1px 0px;
+}
+
+.wrapper {
+  flex: 1;
+  background-color: var(--color-cornflowerblue);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 4px 12px;
+  opacity: 0.37;
+}
+
+.input-addonicon {
+  align-self: stretch;
+  width: 32px;
+  max-height: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  border-left: 1px solid var(--color-gainsboro);
+}
+
+.input-addonicon:hover {
+  background-color: #e8e8e8;
+}
+
+.input-addonicon:active {
+  background-color: #ddd;
+}
+
+.search-box {
+  width: 100%;
+  position: relative;
+  border-radius: 2px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gainsboro);
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 14px;
+  color: var(--color-gray);
+  font-family: var(--font-roboto);
+  height: 32px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .search-box {
+    font-size: 12px;
+  }
+  
+  .input-field {
+    font-size: 12px;
+  }
+}
