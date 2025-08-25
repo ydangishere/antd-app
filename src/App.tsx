@@ -29,10 +29,26 @@ function App() {
       name: 'New Profile Form',
       description: 'Form component for creating new user profiles',
       component: (
-        <NewProfileForm 
-          onDiscard={() => console.log('Form discarded')}
-          onCreate={(data) => console.log('Profile created:', data)}
-        />
+        <div style={{ width: '100%', maxWidth: '600px' }}>
+          <button
+            onClick={() => alert('This would show the actual form in a real application')}
+            style={{
+              background: '#007bff',
+              color: 'white',
+              border: 'none',
+              padding: '10px 20px',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '14px'
+            }}
+          >
+            Open New Profile Form
+          </button>
+          <div style={{ marginTop: '20px', color: '#666', fontSize: '14px' }}>
+            Note: The actual form is not shown here to avoid UI conflicts.
+            In a real application, clicking this button would open the form.
+          </div>
+        </div>
       )
     },
     {
@@ -46,10 +62,26 @@ function App() {
       name: 'Discard Confirmation Modal',
       description: 'Modal dialog for confirming discard actions',
       component: (
-        <DiscardConfirmation 
-          onCancel={() => setActiveComponent('')}
-          onConfirm={() => setActiveComponent('')}
-        />
+        <div style={{ width: '100%', maxWidth: '600px' }}>
+          <button
+            onClick={() => alert('This would show the actual modal in a real application')}
+            style={{
+              background: '#007bff',
+              color: 'white',
+              border: 'none',
+              padding: '10px 20px',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '14px'
+            }}
+          >
+            Show Discard Confirmation Modal
+          </button>
+          <div style={{ marginTop: '20px', color: '#666', fontSize: '14px' }}>
+            Note: The actual modal is not shown here to avoid UI conflicts.
+            In a real application, clicking this button would open the modal.
+          </div>
+        </div>
       )
     }
   ]
