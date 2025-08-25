@@ -168,11 +168,13 @@ const FilterComponent: React.FC<FilterComponentProps> = ({ onFilter, onCancel })
           </div>
         </div>
         <div className="horizontalborder1">
-          <div className="cancel-wrapper" onClick={handleCancel}>
-            <div className="cancel">Cancel</div>
-          </div>
-          <div className="filter-wrapper" onClick={handleFilter}>
-            <div className="cancel">Filter</div>
+          <div style={{ position: 'relative', height: '50px' }}>
+            <div className="cancel-wrapper" onClick={handleCancel}>
+              <div className="cancel">Cancel</div>
+            </div>
+            <div className="filter-wrapper" onClick={handleFilter}>
+              <div className="cancel">Filter</div>
+            </div>
           </div>
         </div>
       </div>

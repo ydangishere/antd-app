@@ -246,12 +246,13 @@
 }
 
 .form {
-  position: absolute;
+  position: relative;
   width: calc(100% - 48px);
-  top: 83px;
-  right: 24px;
-  left: 24px;
-  height: 611px;
+  margin-top: 83px;
+  margin-left: 24px;
+  margin-right: 24px;
+  height: auto;
+  min-height: 611px;
 }
 
 .cancel {
@@ -295,25 +296,25 @@
 }
 
 .horizontalborder1 {
-  position: absolute;
+  position: relative;
   width: 100%;
-  top: 694px;
-  right: 0px;
-  left: 0px;
+  margin-top: 20px;
   border-top: 1px solid var(--color-gray-300);
   box-sizing: border-box;
   height: 59px;
   text-align: center;
+  padding-top: 10px;
 }
 
 .container {
-  position: absolute;
+  position: relative;
   width: 100%;
   top: 0px;
   right: 0px;
   left: 0px;
-  height: 753px;
-  overflow: auto;
+  height: auto;
+  min-height: 753px;
+  overflow: visible;
   font-size: var(--font-size-14);
   color: var(--color-black);
 }
@@ -322,8 +323,9 @@
   width: 100%;
   position: relative;
   background-color: var(--color-white);
-  height: 753px;
-  overflow: auto;
+  height: auto;
+  min-height: 753px;
+  overflow: visible;
   text-align: left;
   font-size: 16px;
   color: var(--color-gray-200);

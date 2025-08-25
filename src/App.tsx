@@ -38,7 +38,7 @@ function App() {
       name: 'Filter Component',
       description: 'Advanced filter dialog with multiple selection options',
       component: (
-        <div style={{ width: '500px', height: '600px', overflow: 'hidden', margin: '0 auto' }}>
+        <div style={{ width: '500px', height: '800px', overflow: 'auto', margin: '0 auto' }}>
           <FilterComponent 
             onFilter={(filters) => console.log('Filters applied:', filters)}
             onCancel={() => console.log('Filter canceled')}
@@ -168,7 +168,7 @@ function App() {
               }}
             >
               View Filter Component
-            </button>
+        </button>
             <button
               onClick={() => navigateTo('searchbox')}
               style={{
@@ -183,7 +183,7 @@ function App() {
               }}
             >
               View SearchBox
-            </button>
+        </button>
             <button
               onClick={() => setShowForm(true)}
               style={{
@@ -196,8 +196,8 @@ function App() {
                 fontSize: '14px'
               }}
             >
-              Show Form
-            </button>
+          Show Form
+        </button>
           </div>
           <div style={{ marginTop: '20px', color: '#666', fontSize: '14px' }}>
             <div>
