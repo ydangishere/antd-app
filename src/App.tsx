@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -11,6 +11,26 @@ import FilterComponent from './components/FilterComponent'
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
   const [showForm, setShowForm] = useState(false) // Đã đặt là false rồi
+
+  // Simple hash router to support deep links like #/filter
+  useEffect(() => {
+    const normalizeHashToId = (hash: string): string => hash.replace(/^#\/?/, '')
+    const initialId = normalizeHashToId(window.location.hash)
+    if (initialId) {
+      setActiveComponent(initialId)
+    }
+    const handleHashChange = () => {
+      const idFromHash = normalizeHashToId(window.location.hash)
+      setActiveComponent(idFromHash)
+    }
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
+
+  const navigateTo = (id: string) => {
+    setActiveComponent(id)
+    window.location.hash = id ? `/${id}` : '/'
+  }
 
   const components = [
     {
@@ -135,7 +155,7 @@ function App() {
           </p>
           <div style={{ marginTop: '20px' }}>
             <button
-              onClick={() => setActiveComponent('filter')}
+              onClick={() => navigateTo('filter')}
               style={{
                 background: '#28a745',
                 color: 'white',
@@ -150,7 +170,7 @@ function App() {
               View Filter Component
             </button>
             <button
-              onClick={() => setActiveComponent('searchbox')}
+              onClick={() => navigateTo('searchbox')}
               style={{
                 background: '#6c757d',
                 color: 'white',
@@ -185,19 +205,19 @@ function App() {
             </div>
             <div style={{ marginTop: '10px' }}>
               <button 
-                onClick={() => setActiveComponent('filter')}
+                onClick={() => navigateTo('filter')}
                 style={{ marginRight: '15px', color: '#007bff', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, fontSize: '14px', cursor: 'pointer' }}
               >
                 Filter Component
               </button>
               <button 
-                onClick={() => setActiveComponent('searchbox')}
+                onClick={() => navigateTo('searchbox')}
                 style={{ marginRight: '15px', color: '#007bff', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, fontSize: '14px', cursor: 'pointer' }}
               >
                 SearchBox Component
               </button>
               <button 
-                onClick={() => setActiveComponent('table')}
+                onClick={() => navigateTo('table')}
                 style={{ color: '#007bff', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, fontSize: '14px', cursor: 'pointer' }}
               >
                 Employee Table
