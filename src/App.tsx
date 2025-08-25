@@ -18,7 +18,7 @@ function App() {
       name: 'Filter Component',
       description: 'Advanced filter dialog with multiple selection options',
       component: (
-        <div style={{ width: '500px', height: '600px', overflow: 'hidden' }}>
+        <div style={{ width: '500px', height: '600px', overflow: 'hidden', margin: '0 auto' }}>
           <FilterComponent 
             onFilter={(filters) => console.log('Filters applied:', filters)}
             onCancel={() => console.log('Filter canceled')}
@@ -135,21 +135,6 @@ function App() {
           </p>
           <div style={{ marginTop: '20px' }}>
             <button
-              onClick={() => setShowForm(true)}
-              style={{
-                background: '#007bff',
-                color: 'white',
-                border: 'none',
-                padding: '10px 20px',
-                borderRadius: '4px',
-                cursor: 'pointer',
-                fontSize: '14px',
-                marginRight: '10px'
-              }}
-            >
-              Show Form
-            </button>
-            <button
               onClick={() => setActiveComponent('filter')}
               style={{
                 background: '#28a745',
@@ -173,10 +158,25 @@ function App() {
                 padding: '10px 20px',
                 borderRadius: '4px',
                 cursor: 'pointer',
-                fontSize: '14px'
+                fontSize: '14px',
+                marginRight: '10px'
               }}
             >
               View SearchBox
+            </button>
+            <button
+              onClick={() => setShowForm(true)}
+              style={{
+                background: '#007bff',
+                color: 'white',
+                border: 'none',
+                padding: '10px 20px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '14px'
+              }}
+            >
+              Show Form
             </button>
           </div>
         </div>
