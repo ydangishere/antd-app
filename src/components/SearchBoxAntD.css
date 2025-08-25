@@ -1,6 +1,106 @@
-/* Ant Design SearchBox Custom Styling - Matching the exact design from the HTML/CSS sample */
+/* SearchBox Component Styles - Exact copy from the provided HTML/CSS */
 
-.search-box-antd-container {
+.rectangle {
+  position: absolute;
+  height: calc(100% - 10px);
+  top: 5px;
+  bottom: 5px;
+  left: calc(100% - 31px - 12px);
+  width: 12px;
+  background-color: transparent;
+}
+
+.search-input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #090909;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.search-input::placeholder {
+  color: #090909;
+  opacity: 0.7;
+}
+
+/* Hide the actual placeholder and show our custom one */
+.search-input:not(:placeholder-shown) + .placeholder-text {
+  display: none;
+}
+
+.placeholder-text {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  pointer-events: none;
+  color: #090909;
+  opacity: 0.7;
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  top: 1px;
+  right: 0px;
+  left: 0px;
+  height: 19px;
+  overflow: hidden;
+}
+
+.input {
+  position: absolute;
+  height: calc(100% - 10px);
+  width: calc(100% - 41.2px);
+  top: 5px;
+  right: 29.2px;
+  bottom: 5px;
+  left: 12px;
+  overflow: hidden;
+}
+
+.backgroundborder {
+  position: absolute;
+  width: calc(100% - 31px);
+  top: 0px;
+  right: 31px;
+  left: 0px;
+  border-radius: 6px 0px 0px 6px;
+  background-color: #eaf0f9;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  height: 32px;
+}
+
+.overlay-icon {
+  position: absolute;
+  width: 31px;
+  top: 0px;
+  right: 0px;
+  left: auto;
+  border-radius: 0px 6px 6px 0px;
+  max-width: 100%;
+  overflow: hidden;
+  height: 32px;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.backgroundborder-parent {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: 32px;
+}
+
+.group-parent {
   width: 100%;
   position: relative;
   height: 32px;
@@ -8,76 +108,4 @@
   font-size: 14px;
   color: #090909;
   font-family: 'Segoe UI', sans-serif;
-}
-
-/* Match the exact background color from the sample */
-.search-box-antd-container .ant-input-search {
-  height: 32px;
-}
-
-.search-box-antd-container .ant-input {
-  height: 32px;
-  background-color: #eaf0f9; /* --color-aliceblue from the sample */
-  border: 1px solid #d9d9d9; /* --color-gainsboro from the sample */
-  border-radius: 6px 0 0 6px; /* --br-6 from the sample */
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 14px;
-  color: #090909; /* --color-gray from the sample */
-  padding-left: 12px; /* Match the left: 12px from .input in the sample */
-}
-
-/* Remove focus styles to match the exact design */
-.search-box-antd-container .ant-input:focus,
-.search-box-antd-container .ant-input:hover {
-  border-color: #d9d9d9;
-  box-shadow: none;
-}
-
-.search-box-antd-container .ant-input::placeholder {
-  color: #090909;
-  opacity: 0.7;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.search-box-antd-container .ant-input-group-addon {
-  border-radius: 0 6px 6px 0; /* --br-6 from the sample */
-  border: 1px solid #d9d9d9;
-  border-left: none;
-}
-
-/* Style the search button to match the overlay-icon */
-.search-box-antd-container .ant-btn {
-  height: 32px;
-  border-radius: 0 6px 6px 0;
-  background-color: #f5f5f5;
-  border: none;
-  width: calc(100% - 389.2px); /* Match the width calculation from .overlay-icon */
-  max-width: 40px; /* Ensure it doesn't get too wide */
-  min-width: 32px; /* Ensure it doesn't get too narrow */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search-box-antd-container .ant-btn:hover {
-  background-color: #e8e8e8;
-}
-
-.search-box-antd-container .ant-btn:active {
-  background-color: #ddd;
-}
-
-/* Additional styles to match the exact layout */
-.search-box-antd-container .ant-input-affix-wrapper {
-  background-color: #eaf0f9;
-  border-color: #d9d9d9;
-}
-
-.search-box-antd-container .ant-input-affix-wrapper:hover,
-.search-box-antd-container .ant-input-affix-wrapper:focus,
-.search-box-antd-container .ant-input-affix-wrapper-focused {
-  border-color: #d9d9d9;
-  box-shadow: none;
 }
