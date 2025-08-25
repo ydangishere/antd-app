@@ -6,12 +6,26 @@ import DiscardConfirmation from './components/DiscardConfirmation'
 import NewProfileForm from './components/NewProfileForm'
 import EmployeeTable from './components/EmployeeTable'
 import SearchBoxNew from './components/SearchBoxNew'
+import FilterComponent from './components/FilterComponent'
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
   const [showForm, setShowForm] = useState(false) // Đã đặt là false rồi
 
   const components = [
+    {
+      id: 'filter',
+      name: 'Filter Component',
+      description: 'Advanced filter dialog with multiple selection options',
+      component: (
+        <div style={{ width: '500px', height: '600px', overflow: 'hidden' }}>
+          <FilterComponent 
+            onFilter={(filters) => console.log('Filters applied:', filters)}
+            onCancel={() => console.log('Filter canceled')}
+          />
+        </div>
+      )
+    },
     {
       id: 'searchbox',
       name: 'SearchBox Component',
@@ -136,9 +150,24 @@ function App() {
               Show Form
             </button>
             <button
-              onClick={() => setActiveComponent('searchbox')}
+              onClick={() => setActiveComponent('filter')}
               style={{
                 background: '#28a745',
+                color: 'white',
+                border: 'none',
+                padding: '10px 20px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '14px',
+                marginRight: '10px'
+              }}
+            >
+              View Filter Component
+            </button>
+            <button
+              onClick={() => setActiveComponent('searchbox')}
+              style={{
+                background: '#6c757d',
                 color: 'white',
                 border: 'none',
                 padding: '10px 20px',
@@ -220,7 +249,7 @@ function App() {
                 }}
               >
                 ← Back to Components
-              </button>
+        </button>
             </div>
             
             {components
