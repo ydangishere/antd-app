@@ -8,79 +8,181 @@ import EmployeeTable from './components/EmployeeTable'
 import SearchBoxNew from './components/SearchBoxNew'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [showModal, setShowModal] = useState(false)
-  const [showForm, setShowForm] = useState(true)
-  const [showTable, setShowTable] = useState(false)
-  const [showSearchBox, setShowSearchBox] = useState(false)
+  const [activeComponent, setActiveComponent] = useState<string>('')
+
+  const components = [
+    {
+      id: 'searchbox',
+      name: 'SearchBox Component',
+      description: 'Search input with custom styling and search icon',
+      component: (
+        <SearchBoxNew 
+          onSearch={(value) => console.log('Search:', value)}
+          onChange={(value) => console.log('Input changed:', value)}
+          placeholder="Search by Name, ID or Email"
+          style={{ width: '100%', maxWidth: '400px' }}
+        />
+      )
+    },
+    {
+      id: 'form',
+      name: 'New Profile Form',
+      description: 'Form component for creating new user profiles',
+      component: (
+        <NewProfileForm 
+          onDiscard={() => console.log('Form discarded')}
+          onCreate={(data) => console.log('Profile created:', data)}
+        />
+      )
+    },
+    {
+      id: 'table',
+      name: 'Employee Table',
+      description: 'Data table component for displaying employee information',
+      component: <EmployeeTable />
+    },
+    {
+      id: 'modal',
+      name: 'Discard Confirmation Modal',
+      description: 'Modal dialog for confirming discard actions',
+      component: (
+        <DiscardConfirmation 
+          onCancel={() => setActiveComponent('')}
+          onConfirm={() => setActiveComponent('')}
+        />
+      )
+    }
+  ]
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      
-      {showSearchBox && (
-        <div style={{ maxWidth: '500px', margin: '20px auto', padding: '0 20px' }}>
-          <h3>Search Box</h3>
-          <SearchBoxNew 
-            onSearch={(value) => console.log('Search:', value)}
-            onChange={(value) => console.log('Input changed:', value)}
-            placeholder="Search by Name, ID or Email"
-            style={{ width: '100%' }}
-          />
+    <div style={{ minHeight: '100vh', backgroundColor: '#f5f5f5' }}>
+      {/* Header */}
+      <div style={{ 
+        background: 'white', 
+        padding: '20px', 
+        borderBottom: '1px solid #e0e0e0',
+        marginBottom: '30px'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+          <div>
+            <a href="https://vite.dev" target="_blank">
+              <img src={viteLogo} className="logo" alt="Vite logo" />
+            </a>
+            <a href="https://react.dev" target="_blank">
+              <img src={reactLogo} className="logo react" alt="React logo" />
+            </a>
+          </div>
+          <h1>Component Library</h1>
+          <p style={{ color: '#666', fontSize: '16px' }}>
+            Showcase of all React TypeScript components
+          </p>
         </div>
-      )}
-      
-      {showForm && (
-        <NewProfileForm 
-          onDiscard={() => setShowForm(false)}
-          onCreate={(data) => {
-            console.log('Profile created:', data);
-            setShowForm(false);
-          }}
-        />
-      )}
-
-      {showTable && <EmployeeTable />}
-      
-      {showModal && (
-        <DiscardConfirmation 
-          onCancel={() => setShowModal(false)}
-          onConfirm={() => setShowModal(false)}
-        />
-      )}
-      
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <button onClick={() => setShowModal(true)} style={{marginLeft: '10px'}}>
-          Preview Discard Modal
-        </button>
-        <button onClick={() => setShowForm(true)} style={{marginLeft: '10px'}}>
-          Show Form
-        </button>
-        <button onClick={() => setShowTable((v) => !v)} style={{marginLeft: '10px'}}>
-          {showTable ? 'Hide Employee Table' : 'Preview Employee Table'}
-        </button>
-        <button onClick={() => setShowSearchBox((v) => !v)} style={{marginLeft: '10px'}}>
-          {showSearchBox ? 'Hide Search Box' : 'Preview Search Box'}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+      {/* Main Content */}
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+        
+        {/* Component List */}
+        {!activeComponent && (
+          <div>
+            <h2 style={{ marginBottom: '30px', color: '#333' }}>Available Components</h2>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '20px' 
+            }}>
+              {components.map((comp) => (
+                <div 
+                  key={comp.id}
+                  style={{
+                    background: 'white',
+                    padding: '20px',
+                    borderRadius: '8px',
+                    border: '1px solid #e0e0e0',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                  }}
+                  onClick={() => setActiveComponent(comp.id)}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-2px)'
+                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)'
+                    e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'
+                  }}
+                >
+                  <h3 style={{ margin: '0 0 10px 0', color: '#333' }}>{comp.name}</h3>
+                  <p style={{ margin: '0', color: '#666', fontSize: '14px' }}>{comp.description}</p>
+                  <div style={{ 
+                    marginTop: '15px', 
+                    color: '#007bff', 
+                    fontSize: '14px', 
+                    fontWeight: 'bold' 
+                  }}>
+                    Click to preview →
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Component Preview */}
+        {activeComponent && (
+          <div>
+            <div style={{ marginBottom: '20px' }}>
+              <button 
+                onClick={() => setActiveComponent('')}
+                style={{
+                  background: '#007bff',
+                  color: 'white',
+                  border: 'none',
+                  padding: '10px 20px',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  fontSize: '14px'
+                }}
+              >
+                ← Back to Components
+              </button>
+            </div>
+            
+            {components
+              .filter(comp => comp.id === activeComponent)
+              .map(comp => (
+                <div key={comp.id}>
+                  <div style={{ 
+                    background: 'white', 
+                    padding: '20px', 
+                    borderRadius: '8px',
+                    border: '1px solid #e0e0e0',
+                    marginBottom: '20px'
+                  }}>
+                    <h2 style={{ margin: '0 0 10px 0', color: '#333' }}>{comp.name}</h2>
+                    <p style={{ margin: '0 0 20px 0', color: '#666' }}>{comp.description}</p>
+                  </div>
+                  
+                  <div style={{ 
+                    background: 'white', 
+                    padding: '40px', 
+                    borderRadius: '8px',
+                    border: '1px solid #e0e0e0',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    minHeight: '200px'
+                  }}>
+                    {comp.component}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        )}
+      </div>
+    </div>
   )
 }
 
