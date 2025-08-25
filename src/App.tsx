@@ -9,6 +9,7 @@ import SearchBoxNew from './components/SearchBoxNew'
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
+  const [showForm, setShowForm] = useState(false)
 
   const components = [
     {
@@ -88,6 +89,16 @@ function App() {
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#f5f5f5' }}>
+      {showForm && (
+        <NewProfileForm 
+          onDiscard={() => setShowForm(false)}
+          onCreate={(data) => {
+            console.log('Profile created:', data);
+            setShowForm(false);
+          }}
+        />
+      )}
+
       {/* Header */}
       <div style={{ 
         background: 'white', 
