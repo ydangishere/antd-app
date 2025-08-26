@@ -27,13 +27,7 @@ const EmployeeTableNew: React.FC = () => {
 
   const columns: ColumnsType<EmployeeData> = [
     {
-      title: (
-        <div className="table-header-cell">
-          <div className="sorter">
-            <div className="english-score">Photo</div>
-          </div>
-        </div>
-      ),
+      title: "Photo",
       dataIndex: 'photo',
       key: 'photo',
       width: 111,
@@ -46,13 +40,7 @@ const EmployeeTableNew: React.FC = () => {
       ),
     },
     {
-                   title: (
-               <div className="table-header-cell">
-                 <div className="sorter1">
-                   <div className="english-score">Employee ID</div>
-                 </div>
-               </div>
-             ),
+      title: "Employee ID",
       dataIndex: 'employeeId',
       key: 'employeeId',
       width: 161,
@@ -60,13 +48,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'employeeId' ? sortedInfo.order : null,
     },
     {
-                   title: (
-               <div className="table-header-cell">
-                 <div className="sorter1">
-                   <div className="english-score">Complete name</div>
-                 </div>
-               </div>
-             ),
+      title: "Complete name",
       dataIndex: 'completeName',
       key: 'completeName',
       width: 205,
@@ -74,13 +56,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'completeName' ? sortedInfo.order : null,
     },
     {
-                   title: (
-               <div className="table-header-cell">
-                 <div className="sorter1">
-                   <div className="english-score">Gearinc email</div>
-                 </div>
-               </div>
-             ),
+      title: "Gearinc email",
       dataIndex: 'gearincEmail',
       key: 'gearincEmail',
       width: 189,
@@ -88,11 +64,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'gearincEmail' ? sortedInfo.order : null,
     },
     {
-                   title: (
-               <div className="sorter1">
-                 <div className="english-score">Designation</div>
-               </div>
-             ),
+      title: "Designation",
       dataIndex: 'designation',
       key: 'designation',
       width: 175,
@@ -100,11 +72,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'designation' ? sortedInfo.order : null,
     },
     {
-                   title: (
-               <div className="sorter1">
-                 <div className="english-score">Division</div>
-               </div>
-             ),
+      title: "Division",
       dataIndex: 'division',
       key: 'division',
       width: 161,
@@ -112,11 +80,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'division' ? sortedInfo.order : null,
     },
     {
-                   title: (
-               <div className="sorter1">
-                 <div className="english-score">Department</div>
-               </div>
-             ),
+      title: "Department",
       dataIndex: 'department',
       key: 'department',
       width: 165,
@@ -124,11 +88,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'department' ? sortedInfo.order : null,
     },
     {
-                   title: (
-               <div className="sorter1">
-                 <div className="english-score">Project</div>
-               </div>
-             ),
+      title: "Project",
       dataIndex: 'project',
       key: 'project',
       width: 177,
@@ -136,11 +96,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'project' ? sortedInfo.order : null,
     },
     {
-                   title: (
-               <div className="sorter1">
-                 <div className="english-score">Country</div>
-               </div>
-             ),
+      title: "Country",
       dataIndex: 'country',
       key: 'country',
       width: 155,
@@ -148,11 +104,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'country' ? sortedInfo.order : null,
     },
     {
-                   title: (
-               <div className="sorter1">
-                 <div className="english-score">Site</div>
-               </div>
-             ),
+      title: "Site",
       dataIndex: 'site',
       key: 'site',
       width: 157,

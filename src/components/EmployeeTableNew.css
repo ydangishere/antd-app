@@ -101,40 +101,11 @@
   box-sizing: border-box;
 }
 
-/* Sorter classes */
-.sorter {
-  flex: 1;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  z-index: 0;
-  text-align: center;
-}
-
-.sorter1 {
-  flex: 1;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--gap-8);
-  z-index: 0;
-}
-
-.sorter2 {
-  align-self: stretch;
-  width: 11px;
-  position: relative;
-}
-
-.english-score {
-  flex: 1;
-  position: relative;
-  line-height: 22px;
+/* Table header text */
+.employee-table-new .ant-table-thead > tr > th {
   font-weight: 600;
+  font-family: var(--font-segoe-ui);
+  font-size: var(--font-size-14);
   color: var(--color-gray-200);
 }
 
