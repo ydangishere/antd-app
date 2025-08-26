@@ -61,6 +61,50 @@
   border-right: none !important;
 }
 
+/* Fix continuous line between header and body */
+.employee-table-new .ant-table-container {
+  border-top: none;
+}
+
+/* Make sure borders are continuous */
+.employee-table-new .ant-table-container:before,
+.employee-table-new .ant-table-container:after {
+  display: none !important;
+}
+
+.employee-table-new table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove the gap between header and body */
+.employee-table-new .ant-table-header {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.employee-table-new .ant-table-body {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Force no spacing between rows */
+.employee-table-new .ant-table-thead + .ant-table-tbody {
+  margin-top: -1px !important;
+}
+
+/* Direct override to fix gap */
+.employee-table-new .ant-table-tbody {
+  position: relative;
+  top: -1px;
+}
+
+.employee-table-new .ant-table-thead > tr > th {
+  border-bottom: 1px solid var(--color-whitesmoke) !important;
+}
+
 .employee-table-new .ant-table-thead > tr > th:not(:last-child)::after {
   content: "";
   position: absolute;
@@ -75,6 +119,7 @@
 /* Body styling */
 .employee-table-new .ant-table-tbody > tr > td {
   border-bottom: 1px solid var(--color-whitesmoke) !important;
+  border-top: none !important;
   padding: 0 !important;
   height: 42px;
   position: relative;

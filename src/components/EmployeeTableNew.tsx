@@ -230,6 +230,7 @@ const EmployeeTableNew: React.FC = () => {
         scroll={{ x: 1656 }}
         className="employee-table-new"
         rowClassName="table-row"
+        tableLayout="fixed"
       />
     </div>
   );
