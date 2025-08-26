@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap');
+
+:root {
+  /* Color */
+  --color-white: #fff;
+  --color-gray-100: #fafafa;
+  --color-gray-200: rgba(0, 0, 0, 0.88);
+  --color-gray-300: rgba(0, 0, 0, 0.85);
+  --color-gray-400: rgba(0, 0, 0, 0.06);
+  --color-whitesmoke: #f0f0f0;
+  
+  /* Gap */
+  --gap-4: 4px;
+  --gap-8: 8px;
+  
+  /* Padding */
+  --padding-16: 16px;
+  
+  /* BorderRadius */
+  --br-8: 8px;
+  
+  /* Font */
+  --font-segoe-ui: Segoe UI;
+  
+  /* FontSize */
+  --font-size-14: 14px;
+}
+
+.employee-table-new-container {
+  width: 100%;
+  position: relative;
+  border-radius: var(--br-8) var(--br-8) 0px 0px;
+  background-color: var(--color-white);
+  height: 391px;
+  text-align: left;
+  font-size: var(--font-size-14);
+  color: var(--color-gray-300);
+  font-family: var(--font-segoe-ui);
+  overflow: hidden;
+}
+
+.employee-table-new {
+  border: none;
+}
+
+.employee-table-new .ant-table {
+  background: transparent;
+}
+
+/* Header styling */
+.employee-table-new .ant-table-thead > tr > th {
+  background-color: var(--color-gray-100) !important;
+  border-bottom: 1px solid var(--color-gray-400) !important;
+  padding: var(--padding-16) !important;
+  height: 55px;
+  position: relative;
+  font-weight: 600;
+  color: var(--color-gray-200);
+  font-family: var(--font-segoe-ui);
+  font-size: var(--font-size-14);
+  border-right: none !important;
+}
+
+.employee-table-new .ant-table-thead > tr > th:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: calc(50% - 11px);
+  width: 1px;
+  height: 23px;
+  background-color: var(--color-gray-400);
+  z-index: 1;
+}
+
+/* Body styling */
+.employee-table-new .ant-table-tbody > tr > td {
+  border-bottom: 1px solid var(--color-whitesmoke) !important;
+  padding: 0 !important;
+  height: 42px;
+  position: relative;
+  background-color: var(--color-white);
+  color: var(--color-gray-200);
+  font-family: var(--font-segoe-ui);
+  font-size: var(--font-size-14);
+  border-right: none !important;
+}
+
+.employee-table-new .ant-table-tbody > tr:hover > td {
+  background-color: var(--color-white) !important;
+}
+
+/* Header cell structure */
+.table-header-cell {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sorter classes */
+.sorter {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  text-align: center;
+}
+
+.sorter1 {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-8);
+  z-index: 0;
+}
+
+.sorter2 {
+  align-self: stretch;
+  width: 11px;
+  position: relative;
+}
+
+.english-score {
+  flex: 1;
+  position: relative;
+  line-height: 22px;
+  font-weight: 600;
+  color: var(--color-gray-200);
+}
+
+
+
+/* Employee photo */
+.employee-photo {
+  margin: 19px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.employee-table-new .ant-table-tbody > tr > td:nth-child(1) .ant-avatar {
+  margin: 0;
+}
+
+.employee-table-new .ant-table-tbody > tr > td:nth-child(1) .ant-avatar img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+
+/* Column widths */
+.employee-table-new .ant-table-thead > tr > th:nth-child(1) {
+  width: 111px;
+}
+
+.employee-table-new .ant-table-thead > tr > th:nth-child(2) {
+  width: 161px;
+}
+
+.employee-table-new .ant-table-thead > tr > th:nth-child(3) {
+  width: 205px;
+}
+
+.employee-table-new .ant-table-thead > tr > th:nth-child(4) {
+  width: 189px;
+}
+
+.employee-table-new .ant-table-thead > tr > th:nth-child(5) {
+  width: 175px;
+}
+
+.employee-table-new .ant-table-thead > tr > th:nth-child(6) {
+  width: 161px;
+}
+
+.employee-table-new .ant-table-thead > tr > th:nth-child(7) {
+  width: 165px;
+}
+
+.employee-table-new .ant-table-thead > tr > th:nth-child(8) {
+  width: 177px;
+}
+
+.employee-table-new .ant-table-thead > tr > th:nth-child(9) {
+  width: 155px;
+}
+
+.employee-table-new .ant-table-thead > tr > th:nth-child(10) {
+  width: 157px;
+}
+
+/* Data cell content positioning */
+.employee-table-new .ant-table-tbody > tr > td > div {
+  position: absolute;
+  top: calc(50% - 12.5px);
+  left: 16.11px;
+  line-height: 22px;
+  color: var(--color-gray-200);
+  font-family: var(--font-segoe-ui);
+  font-size: var(--font-size-14);
+}
+
+.employee-table-new .ant-table-tbody > tr > td:nth-child(1) > div {
+  position: static;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  padding-top: 5px;
+  padding-left: 60px;
+}
+
+/* Remove default Ant Design table borders */
+.employee-table-new .ant-table-container {
+  border: none;
+}
+
+.employee-table-new .ant-table-content {
+  border: none;
+}
+
+.employee-table-new .ant-table-header {
+  border: none;
+}
+
+.employee-table-new .ant-table-body {
+  border: none;
+}
+
+/* Custom scrollbar */
+.employee-table-new .ant-table-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.employee-table-new .ant-table-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.employee-table-new .ant-table-body::-webkit-scrollbar-thumb {
+  background: var(--color-gray-400);
+  border-radius: 4px;
+}
+
+.employee-table-new .ant-table-body::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-300);
+}

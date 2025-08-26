@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Table, Avatar } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
-import { CaretUpOutlined } from '@ant-design/icons';
-import './EmployeeDataTable.css';
+
+import './EmployeeTableNew.css';
 
 interface EmployeeData {
   key: string;
@@ -18,7 +18,7 @@ interface EmployeeData {
   site: string;
 }
 
-const EmployeeDataTable: React.FC = () => {
+const EmployeeTableNew: React.FC = () => {
   const [sortedInfo, setSortedInfo] = useState<any>({});
 
   const handleChange = (pagination: any, filters: any, sorter: any) => {
@@ -29,7 +29,9 @@ const EmployeeDataTable: React.FC = () => {
     {
       title: (
         <div className="table-header-cell">
-          <span>Photo</span>
+          <div className="sorter">
+            <div className="english-score">Photo</div>
+          </div>
         </div>
       ),
       dataIndex: 'photo',
@@ -44,90 +46,89 @@ const EmployeeDataTable: React.FC = () => {
       ),
     },
     {
-      title: (
-        <div className="table-header-cell">
-          <span>Employee ID</span>
-          <CaretUpOutlined className="sort-icon" />
-        </div>
-      ),
+                   title: (
+               <div className="table-header-cell">
+                 <div className="sorter1">
+                   <div className="english-score">Employee ID</div>
+                 </div>
+               </div>
+             ),
       dataIndex: 'employeeId',
       key: 'employeeId',
-      width: 125,
+      width: 161,
       sorter: (a, b) => a.employeeId.localeCompare(b.employeeId),
       sortOrder: sortedInfo.columnKey === 'employeeId' ? sortedInfo.order : null,
     },
     {
-      title: (
-        <div className="table-header-cell">
-          <span>Complete name</span>
-          <CaretUpOutlined className="sort-icon" />
-        </div>
-      ),
+                   title: (
+               <div className="table-header-cell">
+                 <div className="sorter1">
+                   <div className="english-score">Complete name</div>
+                 </div>
+               </div>
+             ),
       dataIndex: 'completeName',
       key: 'completeName',
-      width: 191,
+      width: 205,
       sorter: (a, b) => a.completeName.localeCompare(b.completeName),
       sortOrder: sortedInfo.columnKey === 'completeName' ? sortedInfo.order : null,
     },
     {
-      title: (
-        <div className="table-header-cell">
-          <span>Gearinc email</span>
-          <CaretUpOutlined className="sort-icon" />
-        </div>
-      ),
+                   title: (
+               <div className="table-header-cell">
+                 <div className="sorter1">
+                   <div className="english-score">Gearinc email</div>
+                 </div>
+               </div>
+             ),
       dataIndex: 'gearincEmail',
       key: 'gearincEmail',
-      width: 168,
+      width: 189,
       sorter: (a, b) => a.gearincEmail.localeCompare(b.gearincEmail),
       sortOrder: sortedInfo.columnKey === 'gearincEmail' ? sortedInfo.order : null,
     },
     {
-      title: (
-        <div className="table-header-cell">
-          <span>Designation</span>
-          <CaretUpOutlined className="sort-icon" />
-        </div>
-      ),
+                   title: (
+               <div className="sorter1">
+                 <div className="english-score">Designation</div>
+               </div>
+             ),
       dataIndex: 'designation',
       key: 'designation',
-      width: 157,
+      width: 175,
       sorter: (a, b) => a.designation.localeCompare(b.designation),
       sortOrder: sortedInfo.columnKey === 'designation' ? sortedInfo.order : null,
     },
     {
-      title: (
-        <div className="table-header-cell">
-          <span>Division</span>
-          <CaretUpOutlined className="sort-icon" />
-        </div>
-      ),
+                   title: (
+               <div className="sorter1">
+                 <div className="english-score">Division</div>
+               </div>
+             ),
       dataIndex: 'division',
       key: 'division',
-      width: 160,
+      width: 161,
       sorter: (a, b) => a.division.localeCompare(b.division),
       sortOrder: sortedInfo.columnKey === 'division' ? sortedInfo.order : null,
     },
     {
-      title: (
-        <div className="table-header-cell">
-          <span>Department</span>
-          <CaretUpOutlined className="sort-icon" />
-        </div>
-      ),
+                   title: (
+               <div className="sorter1">
+                 <div className="english-score">Department</div>
+               </div>
+             ),
       dataIndex: 'department',
       key: 'department',
-      width: 166,
+      width: 165,
       sorter: (a, b) => a.department.localeCompare(b.department),
       sortOrder: sortedInfo.columnKey === 'department' ? sortedInfo.order : null,
     },
     {
-      title: (
-        <div className="table-header-cell">
-          <span>Project</span>
-          <CaretUpOutlined className="sort-icon" />
-        </div>
-      ),
+                   title: (
+               <div className="sorter1">
+                 <div className="english-score">Project</div>
+               </div>
+             ),
       dataIndex: 'project',
       key: 'project',
       width: 177,
@@ -135,28 +136,26 @@ const EmployeeDataTable: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'project' ? sortedInfo.order : null,
     },
     {
-      title: (
-        <div className="table-header-cell">
-          <span>Country</span>
-          <CaretUpOutlined className="sort-icon" />
-        </div>
-      ),
+                   title: (
+               <div className="sorter1">
+                 <div className="english-score">Country</div>
+               </div>
+             ),
       dataIndex: 'country',
       key: 'country',
-      width: 168,
+      width: 155,
       sorter: (a, b) => a.country.localeCompare(b.country),
       sortOrder: sortedInfo.columnKey === 'country' ? sortedInfo.order : null,
     },
     {
-      title: (
-        <div className="table-header-cell">
-          <span>Site</span>
-          <CaretUpOutlined className="sort-icon" />
-        </div>
-      ),
+                   title: (
+               <div className="sorter1">
+                 <div className="english-score">Site</div>
+               </div>
+             ),
       dataIndex: 'site',
       key: 'site',
-      width: 167,
+      width: 157,
       sorter: (a, b) => a.site.localeCompare(b.site),
       sortOrder: sortedInfo.columnKey === 'site' ? sortedInfo.order : null,
     },
@@ -270,18 +269,18 @@ const EmployeeDataTable: React.FC = () => {
   ];
 
   return (
-    <div className="employee-data-table-container">
+    <div className="employee-table-new-container">
       <Table
         columns={columns}
         dataSource={data}
         onChange={handleChange}
         pagination={false}
-        scroll={{ x: 1500 }}
-        className="employee-data-table"
+        scroll={{ x: 1656 }}
+        className="employee-table-new"
         rowClassName="table-row"
       />
     </div>
   );
 };
 
-export default EmployeeDataTable;
+export default EmployeeTableNew;
