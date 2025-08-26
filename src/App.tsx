@@ -7,6 +7,8 @@ import NewProfileForm from './components/NewProfileForm'
 import EmployeeTable from './components/EmployeeTable'
 import SearchBoxNew from './components/SearchBoxNew'
 import FilterComponent from './components/FilterComponent'
+import CustomTabs from './components/CustomTabs'
+import EmployeeDataTable from './components/EmployeeDataTable'
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
@@ -119,6 +121,26 @@ function App() {
               }}
             />
           )}
+        </div>
+      )
+    },
+    {
+      id: 'tabs',
+      name: 'Custom Tabs',
+      description: 'Ant Design tabs with custom styling matching the design specifications',
+      component: (
+        <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
+          <CustomTabs />
+        </div>
+      )
+    },
+    {
+      id: 'employeedatatable',
+      name: 'Employee Data Table',
+      description: 'Ant Design table with custom styling matching the exact design specifications',
+      component: (
+        <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
+          <EmployeeDataTable />
         </div>
       )
     }
