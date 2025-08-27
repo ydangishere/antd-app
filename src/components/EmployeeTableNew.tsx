@@ -19,15 +19,16 @@ interface EmployeeData {
 }
 
 const EmployeeTableNew: React.FC = () => {
-  const [sortedInfo, setSortedInfo] = useState<any>({});
+  // Removed sorting state and handler
 
-  const handleChange = (pagination: any, filters: any, sorter: any) => {
-    setSortedInfo(sorter);
+  // Custom render for column titles to ensure no arrows
+  const renderColumnTitle = (title: string) => {
+    return <span className="custom-column-title">{title}</span>;
   };
 
   const columns: ColumnsType<EmployeeData> = [
     {
-      title: "Photo",
+      title: renderColumnTitle("Photo"),
       dataIndex: 'photo',
       key: 'photo',
       width: 111,
@@ -40,76 +41,67 @@ const EmployeeTableNew: React.FC = () => {
       ),
     },
     {
-      title: "Employee ID",
+      title: renderColumnTitle("Employee ID"),
       dataIndex: 'employeeId',
       key: 'employeeId',
       width: 161,
-      sorter: (a, b) => a.employeeId.localeCompare(b.employeeId),
-      sortOrder: sortedInfo.columnKey === 'employeeId' ? sortedInfo.order : null,
+      // Sorting removed
     },
     {
-      title: "Complete name",
+      title: renderColumnTitle("Complete name"),
       dataIndex: 'completeName',
       key: 'completeName',
       width: 205,
-      sorter: (a, b) => a.completeName.localeCompare(b.completeName),
-      sortOrder: sortedInfo.columnKey === 'completeName' ? sortedInfo.order : null,
+      // Sorting removed
     },
     {
-      title: "Gearinc email",
+      title: renderColumnTitle("Gearinc email"),
       dataIndex: 'gearincEmail',
       key: 'gearincEmail',
       width: 189,
-      sorter: (a, b) => a.gearincEmail.localeCompare(b.gearincEmail),
-      sortOrder: sortedInfo.columnKey === 'gearincEmail' ? sortedInfo.order : null,
+      // Sorting removed
     },
     {
-      title: "Designation",
+      title: renderColumnTitle("Designation"),
       dataIndex: 'designation',
       key: 'designation',
       width: 175,
-      sorter: (a, b) => a.designation.localeCompare(b.designation),
-      sortOrder: sortedInfo.columnKey === 'designation' ? sortedInfo.order : null,
+      // Sorting removed
     },
     {
-      title: "Division",
+      title: renderColumnTitle("Division"),
       dataIndex: 'division',
       key: 'division',
       width: 161,
-      sorter: (a, b) => a.division.localeCompare(b.division),
-      sortOrder: sortedInfo.columnKey === 'division' ? sortedInfo.order : null,
+      // Sorting removed
     },
     {
-      title: "Department",
+      title: renderColumnTitle("Department"),
       dataIndex: 'department',
       key: 'department',
       width: 165,
-      sorter: (a, b) => a.department.localeCompare(b.department),
-      sortOrder: sortedInfo.columnKey === 'department' ? sortedInfo.order : null,
+      // Sorting removed
     },
     {
-      title: "Project",
+      title: renderColumnTitle("Project"),
       dataIndex: 'project',
       key: 'project',
       width: 177,
-      sorter: (a, b) => a.project.localeCompare(b.project),
-      sortOrder: sortedInfo.columnKey === 'project' ? sortedInfo.order : null,
+      // Sorting removed
     },
     {
-      title: "Country",
+      title: renderColumnTitle("Country"),
       dataIndex: 'country',
       key: 'country',
       width: 155,
-      sorter: (a, b) => a.country.localeCompare(b.country),
-      sortOrder: sortedInfo.columnKey === 'country' ? sortedInfo.order : null,
+      // Sorting removed
     },
     {
-      title: "Site",
+      title: renderColumnTitle("Site"),
       dataIndex: 'site',
       key: 'site',
       width: 157,
-      sorter: (a, b) => a.site.localeCompare(b.site),
-      sortOrder: sortedInfo.columnKey === 'site' ? sortedInfo.order : null,
+      // Sorting removed
     },
   ];
 
@@ -225,12 +217,14 @@ const EmployeeTableNew: React.FC = () => {
       <Table
         columns={columns}
         dataSource={data}
-        onChange={handleChange}
+        // Removed onChange handler
         pagination={false}
         scroll={{ x: 1656 }}
         className="employee-table-new"
         rowClassName="table-row"
         tableLayout="fixed"
+        showSorterTooltip={false}
+        sortDirections={[]}
       />
     </div>
   );

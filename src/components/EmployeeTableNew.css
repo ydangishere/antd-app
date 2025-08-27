@@ -271,3 +271,84 @@
 .employee-table-new .ant-table-body::-webkit-scrollbar-thumb:hover {
   background: var(--color-gray-300);
 }
+
+/* Remove all sort indicators and arrows */
+.employee-table-new .ant-table-column-sorter,
+.employee-table-new .ant-table-column-sorter-inner,
+.employee-table-new .ant-table-column-sorter-up,
+.employee-table-new .ant-table-column-sorter-down,
+.employee-table-new .ant-table-thead th.ant-table-column-has-sorters .ant-table-column-sorter,
+.employee-table-new .ant-table-thead th.ant-table-column-sort .ant-table-column-sorter {
+  display: none !important;
+}
+
+/* Remove sort indicators from table headers */
+.employee-table-new .ant-table-thead th.ant-table-column-sort::before,
+.employee-table-new .ant-table-thead th.ant-table-column-has-sorters::before,
+.employee-table-new .ant-table-thead th.ant-table-column-has-sorters::after {
+  display: none !important;
+}
+
+/* Remove hover effects for sortable columns */
+.employee-table-new .ant-table-thead th.ant-table-column-has-sorters:hover {
+  background: var(--color-gray-100) !important;
+  cursor: default;
+}
+
+/* Hide any remaining sort icons or arrows - more aggressive approach */
+.employee-table-new .ant-table-column-title::after,
+.employee-table-new .ant-table-thead th::after,
+.employee-table-new .ant-table-thead th .ant-table-column-title::after,
+.employee-table-new .ant-table-thead th .ant-table-column-sorters::after,
+.employee-table-new .ant-table-thead th .ant-table-column-sorters::before,
+.employee-table-new .ant-table-thead th .ant-table-column-sorters *::after,
+.employee-table-new .ant-table-thead th .ant-table-column-sorters *::before,
+.employee-table-new .ant-table-column-sorters .ant-table-column-sorter,
+.employee-table-new .ant-table-thead th.ant-table-column-has-sorters::before,
+.employee-table-new .ant-table-thead th.ant-table-column-has-sorters::after {
+  display: none !important;
+  content: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Remove all background images that might be arrows */
+.employee-table-new .ant-table-thead th,
+.employee-table-new .ant-table-thead th *,
+.employee-table-new .ant-table-column-sorters,
+.employee-table-new .ant-table-column-sorters * {
+  background-image: none !important;
+}
+
+/* Override any arrow styles */
+.employee-table-new .ant-table-column-sorter-up,
+.employee-table-new .ant-table-column-sorter-down {
+  display: none !important;
+}
+
+/* Custom column title styling */
+.custom-column-title {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Remove all sorting related styles */
+.employee-table-new .ant-table-thead th.ant-table-column-has-sorters {
+  cursor: default !important;
+}
+
+.employee-table-new .ant-table-thead th.ant-table-column-has-sorters:hover {
+  background-color: var(--color-gray-100) !important;
+}
+
+/* Force hide any remaining arrow elements */
+.employee-table-new .ant-table-thead th *[class*="arrow"],
+.employee-table-new .ant-table-thead th *[class*="sort"],
+.employee-table-new .ant-table-thead th svg,
+.employee-table-new .ant-table-thead th img {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
