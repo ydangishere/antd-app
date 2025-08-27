@@ -148,7 +148,7 @@ function App() {
     {
       id: 'multiselecttable',
       name: 'Employee Multi-Select Table',
-      description: 'Table with Multi-Select functionality that can be toggled on/off',
+      description: 'Table with Multi-Select functionality that can be toggled on and off',
       component: (
         <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
           <EmployeeMultiSelectTable />
