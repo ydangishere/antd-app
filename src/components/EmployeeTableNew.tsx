@@ -19,28 +19,15 @@ interface EmployeeData {
 }
 
 const EmployeeTableNew: React.FC = () => {
-  // Removed sorting state and handler
+  const [sortedInfo, setSortedInfo] = useState<any>({});
 
-  // Custom render for column titles to ensure no arrows
+  const handleChange = (pagination: any, filters: any, sorter: any) => {
+    setSortedInfo(sorter);
+  };
+
+  // Simple column title render
   const renderColumnTitle = (title: string) => {
-    // Create a completely custom column title with no possibility of arrows
-    return (
-      <div 
-        className="custom-column-title" 
-        style={{ 
-          display: 'inline-block', 
-          width: '100%', 
-          textAlign: 'left',
-          fontWeight: 600,
-          fontSize: '14px',
-          fontFamily: 'Segoe UI',
-          color: 'rgba(0, 0, 0, 0.88)',
-          backgroundImage: 'none'
-        }}
-      >
-        {title}
-      </div>
-    );
+    return <span className="custom-column-title">{title}</span>;
   };
 
   const columns: ColumnsType<EmployeeData> = [
@@ -62,63 +49,72 @@ const EmployeeTableNew: React.FC = () => {
       dataIndex: 'employeeId',
       key: 'employeeId',
       width: 161,
-      // Sorting removed
+      sorter: (a, b) => a.employeeId.localeCompare(b.employeeId),
+      sortOrder: sortedInfo.columnKey === 'employeeId' ? sortedInfo.order : null,
     },
     {
       title: renderColumnTitle("Complete name"),
       dataIndex: 'completeName',
       key: 'completeName',
       width: 205,
-      // Sorting removed
+      sorter: (a, b) => a.completeName.localeCompare(b.completeName),
+      sortOrder: sortedInfo.columnKey === 'completeName' ? sortedInfo.order : null
     },
     {
       title: renderColumnTitle("Gearinc email"),
       dataIndex: 'gearincEmail',
       key: 'gearincEmail',
       width: 189,
-      // Sorting removed
+      sorter: (a, b) => a.gearincEmail.localeCompare(b.gearincEmail),
+      sortOrder: sortedInfo.columnKey === 'gearincEmail' ? sortedInfo.order : null
     },
     {
       title: renderColumnTitle("Designation"),
       dataIndex: 'designation',
       key: 'designation',
       width: 175,
-      // Sorting removed
+      sorter: (a, b) => a.designation.localeCompare(b.designation),
+      sortOrder: sortedInfo.columnKey === 'designation' ? sortedInfo.order : null
     },
     {
       title: renderColumnTitle("Division"),
       dataIndex: 'division',
       key: 'division',
       width: 161,
-      // Sorting removed
+      sorter: (a, b) => a.division.localeCompare(b.division),
+      sortOrder: sortedInfo.columnKey === 'division' ? sortedInfo.order : null
     },
     {
       title: renderColumnTitle("Department"),
       dataIndex: 'department',
       key: 'department',
       width: 165,
-      // Sorting removed
+      sorter: (a, b) => a.department.localeCompare(b.department),
+      sortOrder: sortedInfo.columnKey === 'department' ? sortedInfo.order : null
     },
     {
       title: renderColumnTitle("Project"),
       dataIndex: 'project',
       key: 'project',
       width: 177,
-      // Sorting removed
+      sorter: (a, b) => a.project.localeCompare(b.project),
+      sortOrder: sortedInfo.columnKey === 'project' ? sortedInfo.order : null
     },
     {
       title: renderColumnTitle("Country"),
       dataIndex: 'country',
       key: 'country',
       width: 155,
-      // Sorting removed
+      sorter: (a, b) => a.country.localeCompare(b.country),
+      sortOrder: sortedInfo.columnKey === 'country' ? sortedInfo.order : null
     },
     {
       title: renderColumnTitle("Site"),
       dataIndex: 'site',
       key: 'site',
       width: 157,
-      // Sorting removed
+      sorter: (a, b) => a.site.localeCompare(b.site),
+      sortOrder: sortedInfo.columnKey === 'site' ? sortedInfo.order : null
     },
   ];
 
@@ -230,18 +226,16 @@ const EmployeeTableNew: React.FC = () => {
   ];
 
   return (
-    <div className="employee-table-new-container no-sort-arrows">
+    <div className="employee-table-new-container">
       <Table
         columns={columns}
         dataSource={data}
-        // Removed onChange handler
+        onChange={handleChange}
         pagination={false}
         scroll={{ x: 1656 }}
         className="employee-table-new"
         rowClassName="table-row"
         tableLayout="fixed"
-        showSorterTooltip={false}
-        sortDirections={[]}
       />
     </div>
   );
