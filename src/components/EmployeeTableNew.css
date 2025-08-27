@@ -272,46 +272,22 @@
   background: var(--color-gray-300);
 }
 
-/* Remove all sort indicators and arrows */
-.employee-table-new .ant-table-column-sorter,
-.employee-table-new .ant-table-column-sorter-inner,
-.employee-table-new .ant-table-column-sorter-up,
-.employee-table-new .ant-table-column-sorter-down,
-.employee-table-new .ant-table-thead th.ant-table-column-has-sorters .ant-table-column-sorter,
-.employee-table-new .ant-table-thead th.ant-table-column-sort .ant-table-column-sorter {
-  display: none !important;
-}
-
-/* Remove sort indicators from table headers */
-.employee-table-new .ant-table-thead th.ant-table-column-sort::before,
-.employee-table-new .ant-table-thead th.ant-table-column-has-sorters::before,
-.employee-table-new .ant-table-thead th.ant-table-column-has-sorters::after {
-  display: none !important;
-}
-
-/* Remove hover effects for sortable columns */
-.employee-table-new .ant-table-thead th.ant-table-column-has-sorters:hover {
-  background: var(--color-gray-100) !important;
-  cursor: default;
-}
-
-/* Remove only custom arrows */
-.employee-table-new .ant-table-thead th *[class*="custom-arrow"] {
-  display: none !important;
-}
-
-/* Keep default Ant Design sorting functionality */
-.employee-table-new .ant-table-thead th.ant-table-column-has-sorters {
-  cursor: pointer;
-}
-
-.employee-table-new .ant-table-thead th.ant-table-column-has-sorters:hover {
-  background-color: rgba(0, 0, 0, 0.02);
-}
-
 /* Custom column title styling */
 .custom-column-title {
   display: inline-block;
   width: 100%;
   position: relative;
+}
+
+/* Ant Design sort arrows styling */
+.employee-table-new .ant-table-column-sorter {
+  margin-left: 4px;
+}
+
+.employee-table-new .ant-table-thead th.ant-table-column-has-sorters {
+  cursor: pointer;
+}
+
+.employee-table-new .ant-table-thead th.ant-table-column-has-sorters:hover {
+  background-color: var(--color-gray-100) !important;
 }

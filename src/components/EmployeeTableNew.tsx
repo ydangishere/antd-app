@@ -25,14 +25,11 @@ const EmployeeTableNew: React.FC = () => {
     setSortedInfo(sorter);
   };
 
-  // Simple column title render
-  const renderColumnTitle = (title: string) => {
-    return <span className="custom-column-title">{title}</span>;
-  };
+  // No custom title render needed
 
   const columns: ColumnsType<EmployeeData> = [
     {
-      title: renderColumnTitle("Photo"),
+      title: "Photo",
       dataIndex: 'photo',
       key: 'photo',
       width: 111,
@@ -45,7 +42,7 @@ const EmployeeTableNew: React.FC = () => {
       ),
     },
     {
-      title: renderColumnTitle("Employee ID"),
+      title: "Employee ID",
       dataIndex: 'employeeId',
       key: 'employeeId',
       width: 161,
@@ -53,7 +50,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'employeeId' ? sortedInfo.order : null,
     },
     {
-      title: renderColumnTitle("Complete name"),
+      title: "Complete name",
       dataIndex: 'completeName',
       key: 'completeName',
       width: 205,
@@ -61,7 +58,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'completeName' ? sortedInfo.order : null
     },
     {
-      title: renderColumnTitle("Gearinc email"),
+      title: "Gearinc email",
       dataIndex: 'gearincEmail',
       key: 'gearincEmail',
       width: 189,
@@ -69,7 +66,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'gearincEmail' ? sortedInfo.order : null
     },
     {
-      title: renderColumnTitle("Designation"),
+      title: "Designation",
       dataIndex: 'designation',
       key: 'designation',
       width: 175,
@@ -77,7 +74,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'designation' ? sortedInfo.order : null
     },
     {
-      title: renderColumnTitle("Division"),
+      title: "Division",
       dataIndex: 'division',
       key: 'division',
       width: 161,
@@ -85,7 +82,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'division' ? sortedInfo.order : null
     },
     {
-      title: renderColumnTitle("Department"),
+      title: "Department",
       dataIndex: 'department',
       key: 'department',
       width: 165,
@@ -93,7 +90,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'department' ? sortedInfo.order : null
     },
     {
-      title: renderColumnTitle("Project"),
+      title: "Project",
       dataIndex: 'project',
       key: 'project',
       width: 177,
@@ -101,7 +98,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'project' ? sortedInfo.order : null
     },
     {
-      title: renderColumnTitle("Country"),
+      title: "Country",
       dataIndex: 'country',
       key: 'country',
       width: 155,
@@ -109,7 +106,7 @@ const EmployeeTableNew: React.FC = () => {
       sortOrder: sortedInfo.columnKey === 'country' ? sortedInfo.order : null
     },
     {
-      title: renderColumnTitle("Site"),
+      title: "Site",
       dataIndex: 'site',
       key: 'site',
       width: 157,
