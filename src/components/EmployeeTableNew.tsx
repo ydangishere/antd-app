@@ -23,7 +23,24 @@ const EmployeeTableNew: React.FC = () => {
 
   // Custom render for column titles to ensure no arrows
   const renderColumnTitle = (title: string) => {
-    return <span className="custom-column-title">{title}</span>;
+    // Create a completely custom column title with no possibility of arrows
+    return (
+      <div 
+        className="custom-column-title" 
+        style={{ 
+          display: 'inline-block', 
+          width: '100%', 
+          textAlign: 'left',
+          fontWeight: 600,
+          fontSize: '14px',
+          fontFamily: 'Segoe UI',
+          color: 'rgba(0, 0, 0, 0.88)',
+          backgroundImage: 'none'
+        }}
+      >
+        {title}
+      </div>
+    );
   };
 
   const columns: ColumnsType<EmployeeData> = [
@@ -213,7 +230,7 @@ const EmployeeTableNew: React.FC = () => {
   ];
 
   return (
-    <div className="employee-table-new-container">
+    <div className="employee-table-new-container no-sort-arrows">
       <Table
         columns={columns}
         dataSource={data}

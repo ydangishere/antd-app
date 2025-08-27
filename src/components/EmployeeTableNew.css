@@ -295,35 +295,49 @@
   cursor: default;
 }
 
-/* Hide any remaining sort icons or arrows - more aggressive approach */
+/* EXTREMELY AGGRESSIVE APPROACH TO HIDE ALL ARROWS */
+
+/* Hide absolutely everything related to sorting */
+.employee-table-new .ant-table-column-sorter,
+.employee-table-new .ant-table-column-sorter-inner,
+.employee-table-new .ant-table-column-sorter-up,
+.employee-table-new .ant-table-column-sorter-down,
+.employee-table-new .ant-table-column-sorters,
+.employee-table-new .ant-table-column-sorters *,
+.employee-table-new .ant-table-thead th.ant-table-column-has-sorters::before,
+.employee-table-new .ant-table-thead th.ant-table-column-has-sorters::after,
+.employee-table-new .ant-table-thead th.ant-table-column-sort::before,
+.employee-table-new .ant-table-thead th.ant-table-column-sort::after,
+.employee-table-new .ant-table-column-sorter-inner-full,
+.employee-table-new .ant-table-filter-trigger,
+.employee-table-new .ant-table-filter-trigger-container,
+.employee-table-new .ant-table-filter-trigger-container-open,
+.employee-table-new .ant-table-filter-icon,
+.employee-table-new .ant-table-column-sorter-inner,
 .employee-table-new .ant-table-column-title::after,
 .employee-table-new .ant-table-thead th::after,
 .employee-table-new .ant-table-thead th .ant-table-column-title::after,
 .employee-table-new .ant-table-thead th .ant-table-column-sorters::after,
 .employee-table-new .ant-table-thead th .ant-table-column-sorters::before,
-.employee-table-new .ant-table-thead th .ant-table-column-sorters *::after,
-.employee-table-new .ant-table-thead th .ant-table-column-sorters *::before,
-.employee-table-new .ant-table-column-sorters .ant-table-column-sorter,
-.employee-table-new .ant-table-thead th.ant-table-column-has-sorters::before,
-.employee-table-new .ant-table-thead th.ant-table-column-has-sorters::after {
+.employee-table-new .ant-table-thead th *[class*="arrow"],
+.employee-table-new .ant-table-thead th *[class*="sort"],
+.employee-table-new .ant-table-thead th svg,
+.employee-table-new .ant-table-thead th img,
+.employee-table-new .ant-table-column-sorter-full {
   display: none !important;
-  content: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
-}
-
-/* Remove all background images that might be arrows */
-.employee-table-new .ant-table-thead th,
-.employee-table-new .ant-table-thead th *,
-.employee-table-new .ant-table-column-sorters,
-.employee-table-new .ant-table-column-sorters * {
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  content: "" !important;
+  background: none !important;
   background-image: none !important;
-}
-
-/* Override any arrow styles */
-.employee-table-new .ant-table-column-sorter-up,
-.employee-table-new .ant-table-column-sorter-down {
-  display: none !important;
 }
 
 /* Custom column title styling */
@@ -332,23 +346,35 @@
   width: 100%;
   position: relative;
   z-index: 2;
+  background-image: none !important;
 }
 
 /* Remove all sorting related styles */
-.employee-table-new .ant-table-thead th.ant-table-column-has-sorters {
+.employee-table-new .ant-table-thead th.ant-table-column-has-sorters,
+.employee-table-new .ant-table-thead th {
   cursor: default !important;
+  background-image: none !important;
 }
 
-.employee-table-new .ant-table-thead th.ant-table-column-has-sorters:hover {
+/* Override any hover effects */
+.employee-table-new .ant-table-thead th.ant-table-column-has-sorters:hover,
+.employee-table-new .ant-table-thead th:hover {
   background-color: var(--color-gray-100) !important;
+  background-image: none !important;
 }
 
-/* Force hide any remaining arrow elements */
-.employee-table-new .ant-table-thead th *[class*="arrow"],
-.employee-table-new .ant-table-thead th *[class*="sort"],
-.employee-table-new .ant-table-thead th svg,
-.employee-table-new .ant-table-thead th img {
+/* Completely override the default Ant Design table header styles */
+.employee-table-new .ant-table-thead {
+  background-image: none !important;
+}
+
+/* Ensure no pseudo-elements can show arrows */
+.employee-table-new .ant-table-thead th::before,
+.employee-table-new .ant-table-thead th::after,
+.employee-table-new .ant-table-thead th *::before,
+.employee-table-new .ant-table-thead th *::after {
   display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
 }
