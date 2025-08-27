@@ -9,6 +9,7 @@ import SearchBoxNew from './components/SearchBoxNew'
 import FilterComponent from './components/FilterComponent'
 import CustomTabs from './components/CustomTabs'
 import EmployeeTableNew from './components/EmployeeTableNew'
+import EmployeeMultiSelectTable from './components/EmployeeMultiSelectTable'
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
@@ -141,6 +142,16 @@ function App() {
       component: (
         <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
           <EmployeeTableNew />
+        </div>
+      )
+    },
+    {
+      id: 'multiselecttable',
+      name: 'Employee Multi-Select Table',
+      description: 'Table with Multi-Select functionality that can be toggled on/off',
+      component: (
+        <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
+          <EmployeeMultiSelectTable />
         </div>
       )
     },
