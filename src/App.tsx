@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Button } from 'antd'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -10,11 +11,13 @@ import FilterComponent from './components/FilterComponent'
 import CustomTabs from './components/CustomTabs'
 import EmployeeTableNew from './components/EmployeeTableNew'
 import EmployeeMultiSelectTable from './components/EmployeeMultiSelectTable'
+import AssignToGroupModal from './components/AssignToGroupModal'
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
   const [showForm, setShowForm] = useState(false) // Đã đặt là false rồi
   const [showDiscardModal, setShowDiscardModal] = useState(false)
+  const [showAssignModal, setShowAssignModal] = useState(false)
 
   // Simple hash router to support deep links like #/filter
   useEffect(() => {
@@ -37,6 +40,26 @@ function App() {
   }
 
   const components = [
+    {
+      id: 'assigngroup',
+      name: 'Assign to Group Modal',
+      description: 'Modal for assigning users to country groups',
+      component: (
+        <div style={{ width: '100%', margin: '0 auto', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '400px' }}>
+          <Button type="primary" onClick={() => setShowAssignModal(true)}>
+            Show Assign to Group Modal
+          </Button>
+          <AssignToGroupModal 
+            visible={showAssignModal}
+            onCancel={() => setShowAssignModal(false)}
+            onAssign={(group) => {
+              console.log('Assigned to:', group);
+              setShowAssignModal(false);
+            }}
+          />
+        </div>
+      )
+    },
     {
       id: 'filter',
       name: 'Filter Component',

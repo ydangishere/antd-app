@@ -1,0 +1,33 @@
+.assign-group-modal .ant-modal-content {
+  border-radius: 4px;
+}
+
+.assign-group-modal {
+  width: 400px !important;
+}
+
+.assign-group-content {
+  padding: 16px 0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 16px;
+}
+
+.group-radio-container {
+  width: 100%;
+}
+
+.radio-row {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.radio-row .ant-radio-wrapper {
+  flex: 1;
+  margin-right: 8px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
