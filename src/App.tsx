@@ -14,6 +14,7 @@ import EmployeeMultiSelectTable from './components/EmployeeMultiSelectTable'
 import AssignToGroupModal from './components/AssignToGroupModal'
 import OrgStructureDemo from './components/OrgStructureDemo'
 import NotificationBannerDemo from './components/NotificationBannerDemo'
+import RequestModalDemo from './components/RequestModalDemo'
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
@@ -42,6 +43,16 @@ function App() {
   }
 
   const components = [
+    {
+      id: 'requestmodal',
+      name: 'Request Modal',
+      description: 'Modal popup showing a change request that needs approval',
+      component: (
+        <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
+          <RequestModalDemo />
+        </div>
+      )
+    },
     {
       id: 'notificationbanner',
       name: 'Notification Banner',
