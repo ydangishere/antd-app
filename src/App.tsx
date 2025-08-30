@@ -21,6 +21,7 @@ import LeaveRequestPendingAcceptDemo from './components/LeaveRequestPendingAccep
 import NotificationMessageDemo from './components/NotificationMessageDemo'
 import NotificationMessageReadonlyDemo from './components/NotificationMessageReadonlyDemo'
 import CoreNotiMessageReadDemo from './components/CoreNotiMessageReadDemo'
+import CoreNotiMessageActionDemo from './components/CoreNotiMessageActionDemo'
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
@@ -49,6 +50,16 @@ function App() {
   }
 
   const components = [
+    {
+      id: 'corenotimessageaction',
+      name: 'Core Noti Message Action',
+      description: 'Core notification component with action buttons',
+      component: (
+        <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
+          <CoreNotiMessageActionDemo />
+        </div>
+      )
+    },
     {
       id: 'corenotimessageread',
       name: 'Core Noti Message Read',
