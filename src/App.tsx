@@ -20,6 +20,7 @@ import RejectNotificationBannerDemo from './components/RejectNotificationBannerD
 import LeaveRequestPendingAcceptDemo from './components/LeaveRequestPendingAcceptDemo'
 import NotificationMessageDemo from './components/NotificationMessageDemo'
 import NotificationMessageReadonlyDemo from './components/NotificationMessageReadonlyDemo'
+import CoreNotiMessageReadDemo from './components/CoreNotiMessageReadDemo'
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
@@ -48,6 +49,16 @@ function App() {
   }
 
   const components = [
+    {
+      id: 'corenotimessageread',
+      name: 'Core Noti Message Read',
+      description: 'Core notification component without header',
+      component: (
+        <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
+          <CoreNotiMessageReadDemo />
+        </div>
+      )
+    },
     {
       id: 'notificationmessagereadonly',
       name: 'Notification Message Readonly',
