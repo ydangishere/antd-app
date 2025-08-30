@@ -18,6 +18,7 @@ import RequestModalDemo from './components/RequestModalDemo'
 import LeaveTimeRequestDemo from './components/LeaveTimeRequestDemo'
 import RejectNotificationBannerDemo from './components/RejectNotificationBannerDemo'
 import LeaveRequestPendingAcceptDemo from './components/LeaveRequestPendingAcceptDemo'
+import NotificationMessageDemo from './components/NotificationMessageDemo'
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
@@ -46,6 +47,18 @@ function App() {
   }
 
   const components = [
+    {
+      id: 'notificationmessage',
+      name: 'Notification Message',
+      description: 'Notification component matching exactly with the photo',
+      component: (
+        <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
+          <NotificationMessageDemo />
+        </div>
+      )
+    },
+
+
     {
       id: 'leaverequestpendingaccept',
       name: 'Leave Request Pending Accept',
