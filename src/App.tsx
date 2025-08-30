@@ -16,6 +16,7 @@ import OrgStructureDemo from './components/OrgStructureDemo'
 import NotificationBannerDemo from './components/NotificationBannerDemo'
 import RequestModalDemo from './components/RequestModalDemo'
 import LeaveTimeRequestDemo from './components/LeaveTimeRequestDemo'
+import RejectNotificationBannerDemo from './components/RejectNotificationBannerDemo'
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
@@ -44,6 +45,16 @@ function App() {
   }
 
   const components = [
+    {
+      id: 'rejectnotification',
+      name: 'Reject Notification Banner',
+      description: 'Error notification banner showing a rejection message',
+      component: (
+        <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
+          <RejectNotificationBannerDemo />
+        </div>
+      )
+    },
     {
       id: 'leavetimerequest',
       name: 'Leave Time Request',
