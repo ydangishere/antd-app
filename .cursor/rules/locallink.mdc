@@ -1,0 +1,7 @@
+---
+description: Chỉ phản hồi code cục bộ, không gửi code hoặc commit lên GitHub cho đến khi có lệnh
+globs: - "**/*"
+alwaysApply: true
+RequestComments:
+QUY TẮC: Bạn **không được tạo commit, push, hoặc gửi lên GitHub** dưới bất kỳ hình thức nào. Bạn **chỉ phản hồi các file code trong local**. Chỉ khi tôi **ra lệnh rõ ràng** kiểu như "đưa lên GitHub", thì bạn mới thực hiện thao tác liên quan đến GitHub.
+---

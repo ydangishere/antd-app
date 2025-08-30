@@ -1,0 +1,64 @@
+.leave-time-request-modal .ant-modal-header {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px 24px;
+}
+
+.leave-time-request-modal .ant-modal-title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.leave-time-request-modal .ant-modal-body {
+  padding: 24px;
+}
+
+.leave-time-request-modal .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.leave-time-request-modal .ant-form-item-label {
+  padding-bottom: 4px;
+}
+
+.leave-time-request-modal .ant-form-item-label > label {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.leave-time-request-modal .full-width {
+  width: 100%;
+}
+
+.leave-time-request-modal .time-range {
+  display: flex;
+  gap: 16px;
+}
+
+.leave-time-request-modal .time-picker-item {
+  flex: 1;
+}
+
+.leave-time-request-modal .info-icon {
+  margin-left: 6px;
+  color: #1890ff;
+  cursor: pointer;
+}
+
+.leave-time-request-modal .modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.leave-time-request-modal .ant-picker {
+  width: 100%;
+}
+
+.leave-time-request-modal .ant-input-number {
+  width: 100%;
+}
+
+.leave-time-request-modal .ant-radio-wrapper {
+  margin-right: 32px;
+}

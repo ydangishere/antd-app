@@ -15,6 +15,7 @@ import AssignToGroupModal from './components/AssignToGroupModal'
 import OrgStructureDemo from './components/OrgStructureDemo'
 import NotificationBannerDemo from './components/NotificationBannerDemo'
 import RequestModalDemo from './components/RequestModalDemo'
+import LeaveTimeRequestDemo from './components/LeaveTimeRequestDemo'
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
@@ -43,6 +44,16 @@ function App() {
   }
 
   const components = [
+    {
+      id: 'leavetimerequest',
+      name: 'Leave Time Request',
+      description: 'Form modal for submitting leave time requests',
+      component: (
+        <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
+          <LeaveTimeRequestDemo />
+        </div>
+      )
+    },
     {
       id: 'requestmodal',
       name: 'Request Modal',
