@@ -17,6 +17,7 @@ import NotificationBannerDemo from './components/NotificationBannerDemo'
 import RequestModalDemo from './components/RequestModalDemo'
 import LeaveTimeRequestDemo from './components/LeaveTimeRequestDemo'
 import RejectNotificationBannerDemo from './components/RejectNotificationBannerDemo'
+import LeaveRequestPendingAcceptDemo from './components/LeaveRequestPendingAcceptDemo'
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
@@ -45,6 +46,16 @@ function App() {
   }
 
   const components = [
+    {
+      id: 'leaverequestpendingaccept',
+      name: 'Leave Request Pending Accept',
+      description: 'Leave request form with prefilled data in pending status',
+      component: (
+        <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
+          <LeaveRequestPendingAcceptDemo />
+        </div>
+      )
+    },
     {
       id: 'rejectnotification',
       name: 'Reject Notification Banner',

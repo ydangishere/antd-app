@@ -1,0 +1,100 @@
+.leave-request-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.leave-request-card {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.leave-request-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 16px;
+}
+
+.leave-request-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.leave-request-status .status-select {
+  width: 100px;
+}
+
+.leave-request-status .ant-select-selector {
+  border-color: #d9d9d9 !important;
+  border-radius: 2px !important;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.id-field {
+  width: 150px;
+}
+
+.time-range {
+  display: flex;
+  gap: 16px;
+}
+
+.time-picker-item {
+  flex: 1;
+}
+
+.time-icon {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.info-icon {
+  margin-left: 6px;
+  color: #1890ff;
+  cursor: pointer;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 16px;
+}
+
+.reject-button {
+  min-width: 100px;
+}
+
+.approve-button {
+  min-width: 100px;
+}
+
+.note-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.note-label {
+  margin-bottom: 8px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.note-textarea {
+  resize: none;
+}
