@@ -1,0 +1,27 @@
+.notification-banner-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.notification-banner {
+  max-width: 400px;
+  padding: 6px 12px;
+  box-shadow: none;
+  border: none;
+  background-color: white;
+}
+
+.notification-banner .ant-alert-message {
+  font-size: 14px;
+}
+
+.notification-banner .ant-alert-icon {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+/* Override Ant Design default styles */
+.notification-banner.ant-alert {
+  align-items: center;
+}

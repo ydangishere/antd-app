@@ -12,6 +12,8 @@ import CustomTabs from './components/CustomTabs'
 import EmployeeTableNew from './components/EmployeeTableNew'
 import EmployeeMultiSelectTable from './components/EmployeeMultiSelectTable'
 import AssignToGroupModal from './components/AssignToGroupModal'
+import OrgStructureDemo from './components/OrgStructureDemo'
+import NotificationBannerDemo from './components/NotificationBannerDemo'
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
@@ -40,6 +42,26 @@ function App() {
   }
 
   const components = [
+    {
+      id: 'notificationbanner',
+      name: 'Notification Banner',
+      description: 'Top banner-style notification using Ant Design Alert component',
+      component: (
+        <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
+          <NotificationBannerDemo />
+        </div>
+      )
+    },
+    {
+      id: 'orgstructure',
+      name: 'Organization Structure Table',
+      description: 'Hierarchical table showing organizational structure with expand/collapse and CRUD operations',
+      component: (
+        <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
+          <OrgStructureDemo />
+        </div>
+      )
+    },
     {
       id: 'assigngroup',
       name: 'Assign to Group Modal',

@@ -1,0 +1,213 @@
+/* OrgStructureTable.css */
+
+.org-structure-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Row styling based on level */
+.row-division td {
+  background-color: rgba(230, 247, 255, 0.3) !important;
+}
+
+.row-department td {
+  background-color: rgba(255, 251, 230, 0.3) !important;
+}
+
+.row-sub-department td {
+  background-color: rgba(255, 241, 240, 0.3) !important;
+}
+
+.row-sub-department-2 td {
+  background-color: rgba(255, 241, 240, 0.2) !important;
+}
+
+/* Hover effect for rows */
+.row-division:hover td {
+  background-color: rgba(230, 247, 255, 0.5) !important;
+}
+
+.row-department:hover td {
+  background-color: rgba(255, 251, 230, 0.5) !important;
+}
+
+.row-sub-department:hover td {
+  background-color: rgba(255, 241, 240, 0.5) !important;
+}
+
+.row-sub-department-2:hover td {
+  background-color: rgba(255, 241, 240, 0.4) !important;
+}
+
+/* Caret icons */
+.caret-icon {
+  margin-right: 8px;
+}
+
+.caret-green {
+  color: #52c41a;
+  cursor: pointer;
+}
+
+.caret-gray {
+  color: #d9d9d9;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Add row styling */
+.add-row {
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  position: relative;
+}
+
+.add-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 16px;
+  height: 1px;
+  background-color: #d9d9d9;
+}
+
+.add-row::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 50%;
+  background-color: #d9d9d9;
+}
+
+/* Add row with L-shaped arrow styling */
+.add-row-no-arrow {
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  position: relative;
+  margin-left: 0;
+}
+
+.add-row-no-arrow::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 16px;
+  height: 1px;
+  background-color: #d9d9d9;
+}
+
+.add-row-no-arrow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 50%;
+  background-color: #d9d9d9;
+}
+
+/* Adjust padding for add rows */
+.add-row-custom .ant-table-cell-with-append:first-child {
+  padding-left: 16px !important;
+}
+
+/* Remove expand icon space */
+.add-row-custom .ant-table-row-expand-icon-cell {
+  width: 0;
+  padding: 0;
+}
+
+/* Remove expand icon */
+.add-row-custom .ant-table-row-expand-icon {
+  display: none;
+}
+
+/* Action buttons alignment */
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Table header styling */
+.org-structure-table .ant-table-thead > tr > th {
+  background-color: #fafafa;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Table cell styling */
+.org-structure-table .ant-table-tbody > tr > td {
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+/* Table overall styling */
+.org-structure-table .ant-table {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Link styling */
+.org-structure-table .ant-typography-link {
+  color: #1890ff;
+}
+
+/* Remove default hover effect */
+.org-structure-table .ant-table-tbody > tr:hover > td {
+  background-color: inherit;
+}
+
+/* Indent levels for the tree structure */
+.org-structure-table .ant-table-row-level-1 .ant-table-cell-with-append:first-child {
+  padding-left: 36px;
+}
+
+.org-structure-table .ant-table-row-level-2 .ant-table-cell-with-append:first-child {
+  padding-left: 60px;
+}
+
+.org-structure-table .ant-table-row-level-3 .ant-table-cell-with-append:first-child {
+  padding-left: 84px;
+}
+
+/* Add row indentation based on level */
+.add-row-division {
+  background-color: rgba(230, 247, 255, 0.1);
+}
+
+.add-row-department {
+  background-color: rgba(255, 251, 230, 0.1);
+}
+
+.add-row-subDepartment {
+  background-color: rgba(255, 241, 240, 0.1);
+}
+
+.add-row-subDepartment2 {
+  background-color: rgba(255, 241, 240, 0.1);
+}
+
+/* Accessibility - focus styles */
+.org-structure-table button:focus,
+.org-structure-table a:focus {
+  outline: 2px solid #1890ff;
+  outline-offset: 2px;
+}
+
+/* Modal styles */
+.ant-modal-content {
+  border-radius: 2px;
+}
+
+.ant-modal-header {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-modal-footer {
+  border-top: 1px solid #f0f0f0;
+}
