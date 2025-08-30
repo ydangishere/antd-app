@@ -19,6 +19,7 @@ import LeaveTimeRequestDemo from './components/LeaveTimeRequestDemo'
 import RejectNotificationBannerDemo from './components/RejectNotificationBannerDemo'
 import LeaveRequestPendingAcceptDemo from './components/LeaveRequestPendingAcceptDemo'
 import NotificationMessageDemo from './components/NotificationMessageDemo'
+import NotificationMessageReadonlyDemo from './components/NotificationMessageReadonlyDemo'
 
 function App() {
   const [activeComponent, setActiveComponent] = useState<string>('')
@@ -47,6 +48,16 @@ function App() {
   }
 
   const components = [
+    {
+      id: 'notificationmessagereadonly',
+      name: 'Notification Message Readonly',
+      description: 'Notification component without approve/reject buttons',
+      component: (
+        <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
+          <NotificationMessageReadonlyDemo />
+        </div>
+      )
+    },
     {
       id: 'notificationmessage',
       name: 'Notification Message',
